@@ -26,6 +26,9 @@
 	.greyline4{
 		height: 305px;
 	}
+	section{
+		padding-top: 80px;
+	}
 }
 
 @media(max-height: 900px), (max-width: 1600px){
@@ -38,6 +41,15 @@
 	}
 	.greyline4{
 		height: 250px;
+	}
+	.ssulki a{
+		font-size: 30px;
+		line-height: 40px;
+		margin-top: 20px;
+	}
+	.ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
+		font-size: 50px;
+		line-height: 60px;
 	}
 }
 
@@ -97,6 +109,49 @@
 	.greyline4{
 		height: 250px;
 	}
+	.rightagency a{
+		margin-right: 50px;
+	}
+	.bgheader2 ul li{
+		margin-top: 30px;
+	}
+	.bgheader2 h1{
+		font-size: 50px;
+	}
+	.leftrab{
+		margin-top: 100px;
+	}
+	.ssulki a{
+		font-size: 25px;
+		line-height: 30px;
+	}
+	.ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
+		font-size: 40px;
+		line-height: 45px;
+	}
+}
+
+@media(max-width: 1860px){
+	.flexrab{
+		margin-left: 250px;
+	}
+	.greyrec{
+		width: 450px;
+	}
+	.leftrab h2{
+		font-size: 36px;
+	}
+	.leftrab{
+		max-width: 450px;
+	}
+	.opisslovo{
+		font-size: 350px;
+		line-height: normal;
+	}
+	.numberrab{
+		font-size: 140px;
+		margin-left: 200px;
+	}
 }
 
 @media(max-width: 1800px){
@@ -147,6 +202,33 @@
 	}
 	.color{
 		padding-right: 120px;
+	}
+	.bigfoto{
+		width: 400px;
+		height: 615px;
+		margin-right: 50px;
+	}
+	.opischel{
+		width: 380px;
+	}
+	.bluelinekomand{
+		bottom: -180px;
+		height: 150px;
+	}
+	.bluelinekomand:first-child{
+		top: -180px;
+	}
+	.foto{
+		width: 180px;
+	}
+	.smallfoto{
+		height: 250px;
+	}
+	.smallfotos{
+		max-width: 420px;
+	}
+	.opisslovo{
+		font-size: 300px;
 	}
 }
 
@@ -205,6 +287,76 @@
 	.bgblue{
 		padding-top: 100px;
 	}
+	.opisslovo{
+		font-size: 250px;
+	}
+	.numberrab{
+		font-size: 120px;
+		margin-left: 170px;
+	}
+	.greyrec{
+		width: 400px;
+		margin-left: 210px;
+	}
+	.rhomb{
+		width: 380px;
+		height: 380px;
+		left: -190px;
+		top: calc(50% - 190px);
+	}
+	.leftrab{
+		max-width: 400px;
+	}
+	.leftrab h2{
+		font-size: 30px;
+	}
+	.nomerrabotaem{
+		font-size: 50px;
+		margin-right: 20px;
+	}
+	.rabotaem{
+		padding: 0px 25px;
+		padding-top: 30px;
+		height: 200px;
+	}
+	.allrabotaem .col-md-3:first-child .rabotaem{
+		height: 420px;
+	}
+	.flexforrabotaem span{
+		font-size: 14px;
+	}
+	.imgrabotaem{
+		width: 100%;
+		height: 280px;
+	}
+	.smallcont, .bigcont{
+		width: 280px;
+		padding: 30px;
+	}
+	.bigcont{
+		height: 400px;
+	}
+	.bigcont, .smallsconts{
+		margin-right: 50px;
+	}
+	.smallcont{
+		height: 170px;
+	}
+	.startcont p, .smallcont p{
+		font-size: 20px;
+	}
+	.centercont{
+		font-size: 14px;
+	}
+	.smallcont a{
+		font-size: 16px;
+	}
+	.endcont p{
+		margin-top: 10px;
+	}
+	.startcont a{
+		font-size: 18px;
+	}
 }
 
 @media(max-width: 1450px){
@@ -215,9 +367,17 @@
 		padding-left: 80px;
 		padding-right: 80px;
 	}
-	.block1, .menu{
+	.block1, .menu, section, .portfolio, .hotite{
 		padding-left: 35px;
 		padding-right: 35px;
+	}
+	.greymenu{
+		width: calc(100% - 70px);
+		left: 35px;
+	}
+	.bluelinemenu{
+		width: 50px;
+		right: -60px;
 	}
 	.bgheader h1{
 		margin-left: 45px;
@@ -259,6 +419,77 @@
 	}
 	.triplephone{
 		margin-left: 150px;
+	}
+	.bigfoto{
+		width: 300px;
+		height: 515px;
+		margin-right: 50px;
+	}
+	.opischel{
+		width: 300px;
+	}
+	.bluelinekomand{
+		bottom: -120px;
+		height: 100px;
+	}
+	.bluelinekomand:first-child{
+		top: -120px;
+	}
+	.smallfoto{
+		height: 200px;
+	}
+	.foto{
+		width: 160px;
+	}
+	.smallfotos{
+		max-width: 350px;
+	}
+	section{
+		padding-top: 80px;
+	}
+	.name{
+		margin-top: 10px;
+	}
+	.doljnost{
+		margin-top: 0px;
+	}
+	section h2{
+		font-size: 36px;
+		padding-left: 70px;
+		-webkit-background-size: 50px 2px;
+		background-size: 50px 2px;
+	}
+	.imgrabotaem{		
+		height: 250px;
+	}
+	.vuborrab{
+		left: 35px;
+	}
+	.vuborrab ul li{
+		margin-top: 20px;
+	}
+	.leftrab{
+		max-width: 300px;
+	}
+	.leftrab h2{
+		font-size: 24px;
+	}
+	.leftrab p{
+		font-size: 14px;
+	}
+	.flexrab{
+		margin-left: 200px;
+	}
+	.opisslovo{
+		font-size: 200px;
+		bottom: 0px;
+	}
+	.opisslovomenu{
+		right: -50px;
+		bottom: -70px;
+	}
+	.closemenu{
+		right: 70px;
 	}
 }
 
@@ -325,6 +556,58 @@
 	}
 	.greyline4{
 		height: 220px;
+	}
+	.imgrabotaem{		
+		height: 220px;
+	}
+	.greyrec{
+		width: 300px;
+		margin-left: 160px;
+	}
+	.rhomb{
+		width: 280px;
+		height: 280px;
+		left: -140px;
+		top: calc(50% - 140px);
+	}
+	.numberrab{
+		font-size: 100px;
+		margin-left: 130px;
+	}
+	.smallcont, .bigcont{
+		width: 240px;
+	}
+	.bigcont{
+		height: 380px;
+	}
+	.bigcont, .smallsconts{
+		margin-right: 25px;
+	}
+	.smallcont{
+		height: 160px;
+	}
+	.startcont p, .smallcont p{
+		font-size: 18px;
+	}
+	.ostzayavku p{
+		font-size: 14px;
+	}
+	.ostzayavku span, .btnostzayav, .flexbuttons a, .startcont a{
+		font-size: 16px;
+	}
+	.btnostzayav{
+		width: 200px;
+		margin-right: 22px;
+		padding: 18px 25px;
+		height: 60px;
+		background-position: right 25px center;
+	}
+	.btnostzayav:hover{
+		background-position: right 20px center;
+	}
+	.ostzayavku{
+		width: auto;
+		max-width: 400px;
 	}
 }
 
@@ -397,7 +680,107 @@
 		height: 190px;
 		width: 190px;
 	}
+	.flexforrabotaem{
+		flex-wrap: wrap;
+		justify-content: center;
+		align-self: start;
+	}
+	.rabotaem{
+		padding-top: 20px;
+	}
+	.nomerrabotaem{
+		margin-right: 0px;
+		font-size: 45px;
+		width: 100%;
+		text-align: center;
+	}
+	.flexforrabotaem span{
+		text-align: center;
+		margin-top: 10px;
+	}
+	.uslugi{
+		max-width: 750px;
+	}
+	.blueline{
+		width: 50px;
+		left: -25px;
+	}
+	.ul li{
+		padding-left: 40px;
+	}
+	.usl{
+		width: 300px;
+	}
+	.costusl{
+		width: 100px;
+	}
+	.usl ul li, .costusl{
+		font-size: 14px;
+	}
+	.leftagency{
+		margin-left: 50px;
+	}
+	.bgheader2 h1{
+		font-size: 40px;
+		max-width: 250px;
+	}
+	.rightagency a{
+		margin-top: 290px;
+	}
+	.greyrec{
+		width: 200px;
+		margin-left: 110px;
+	}
+	.rhomb{
+		width: 250px;
+		height: 250px;
+		left: -125px;
+		top: calc(50% - 125px);
+	}
+	.numberrab{
+		font-size: 60px;
+		margin-left: 110px;
+	}
+	.flexrab{
+		margin-left: 270px;
+	}
+	.smallfotos{
+		max-width: 250px;
+	}
+	.foto{
+		margin-right: 0px;;
+	}
+	.bigfoto{
+		width: 250px;
+		height: 465px;
+	}
+	.opischel{
+		width: 250px;
+	}
+	.bluelinekomand{
+		bottom: -80px;
+		height: 70px;
+	}
+	.bluelinekomand:first-child{
+		top: -80px;
+	}
+	.opischlena2{
+		font-size: 14px;
+	}
+	.name2{
+		font-size: 20px;
+	}
+	.flexmenu{
+		padding-left: 65px;
+	}
+	.forma input[type=text], .forma textarea, .forma input[type=range], .forwidth{
+		width: 400px;
+	}
+	.forma textarea{
+		line-height: 42px;
+	}
 }
+
 @media(max-width: 990px){
 	.greyline4, .greyline6{
 		display: none;
@@ -455,7 +838,7 @@
 	.nextblock2, .nextblock3{
 		display: none;
 	}
-	.nextblock{
+	.nextblock, .nextblock4{
 		font-size: 12px;
 		margin-top: -90px;
 	}
@@ -481,6 +864,158 @@
 	}
 	.block2, .block3, .block4, .block5, .block8, .block9{
 		min-height: 580px;
+	}
+	.flexrab{
+		margin-left: 170px;
+	}
+	.flexcontacts{
+		max-width: 550px;
+		margin: 0 auto;
+		margin-top: 30px;
+		justify-content: flex-start;
+	}
+	.smallcont, .bigcont{
+		width: 230px;		
+	}
+	.smallsconts{
+		margin-right: 0px;
+	}
+	.bigcont{
+		height: 350px;
+		margin-right: 20px;
+	}
+	.smallcont:last-child{
+		margin-top: 30px;
+	}
+	.ostzayavku p, .ostzayavku span{
+		margin-top: 30px;
+	}
+	.ostzayavku p{
+		max-width: 100%;
+		max-width: 100%;
+	}
+	.flexbuttons{
+		margin-top: 30px;
+	}
+	.ostzayavku{
+		max-width: 100%;
+		margin-top: 30px;
+	}
+	.opisslovo{
+		font-size: 150px;
+		bottom: 44px;
+	}
+	section h2{
+		font-size: 24px;
+		-webkit-background-size: 30px 1px;
+		background-size: 30px 1px;
+		padding-left: 40px;
+	}
+	section p, .hotite p{
+		font-size: 14px;
+		margin-top: 30px;
+	}
+	.flexbig{
+		top: 30px;
+	}
+	.smallfotos{
+		max-width: 160px;
+		margin-right: 30px;
+	}
+	.opischel{
+		width: 200px;
+	}
+	.name2, .bgheader2 ul li{
+		font-size: 16px;
+	}
+	.opischlena2{
+		margin-top: 15px;
+		font-size: 12px;
+	}
+	.bigfoto{
+		margin-right: 30px;
+		height: 400px;
+	}
+	.rabotaem{
+		margin-top: 30px;
+	}
+	.allrabotaem .col-md-3:first-child .rabotaem{
+		height: 395px;
+	}
+	.uslugi h3{
+		padding-top: 30px;
+		font-size: 20px;
+	}
+	.ul{
+		padding-bottom: 20px;
+		padding-top: 20px;
+		padding-right: 10px;
+	}
+	.ul li{
+		margin-top: 30px;
+		padding-left: 30px;
+	}
+	.blueline{
+		width: 30px;
+		height: 1px;
+		left: -15px;
+		top: 10px;
+	}
+	.usl{
+		width: 250px;
+		padding-right: 10px;
+	}
+	.usl ul li, .costusl{
+		font-size: 12px;
+	}
+	.usl ul{
+		margin-top: 10px;
+	}
+	.costusl div{
+		margin-top: 35px;
+	}
+	.uslugi{
+		max-width: 600px;
+	}
+	.hotite h2{
+		font-size: 24px;
+	}
+	.forma input[type=text], .forma textarea, .forma input[type=range], .forwidth{
+		width: 320px;
+		margin-top: 30px;
+	}
+	.forma textarea{
+		margin-top: 45px;
+		line-height: 35px;
+	}
+	.forma input[type=range]{
+		margin-top: 48px;
+	}
+	.forma label, .prava{
+		margin-top: 30px;
+		font-size: 14px;
+	}
+	.btnsend{
+		margin-top: 0px;
+	}
+	.bgheader2 h1{
+		font-size: 30px;
+	}
+	.bgheader2 ul li{
+		padding-left: 40px;
+		-webkit-background-size: 25px 1px;
+		background-size: 25px 1px;
+	}
+	.leftagency{
+		margin-left: 30px;
+	}
+	.rightagency a{
+		margin-right: 30px;
+		font-size: 14px;
+		margin-top: 260px;
+	}
+	.flexform{
+		max-width: 680px;
 	}
 }
 
@@ -548,7 +1083,43 @@
 	.block2 h2, .block3 h2, .block4 h2, .block5 h2, .block8 h2, .block9 h2{
 		font-size: 110px;
 	}
+	.forma input[type=text], .forma textarea, .forma input[type=range], .forwidth{
+		width: 250px;
+	}
+	.forma textarea{
+		margin-top: 53px;
+		line-height: 26px;
+	}
+	.flexform{
+		max-width: 530px;
+	}
+	.btnsend{
+		font-size: 18px;
+		padding-right: 40px;
+		background-size: 21px 14px;
+		-webkit-background-size: 21px 14px;;
+	}
+	.forwidth{
+		margin-top: 34px;
+	}
+	.rabotaem, .allrabotaem .col-md-3:first-child .rabotaem{
+		height: auto;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.allrabotaem .col-md-3:first-child .rabotaem{
+		padding-bottom: 250px;
+	}
+	.imgrabotaem{
+		left: 25%;
+		bottom: 0px;
+		width: 50%;
+	}
+	.bigfoto{
+		display: none;
+	}
 }
+
 @media(max-width: 600px){
 	.block1, .block2, .block3, .block4, .block5, .block8, .block9{
 		min-height: auto;
@@ -556,7 +1127,7 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.menu{
+	.menu, .block1, .menu, section, .portfolio, .hotite{
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -576,7 +1147,7 @@
 		bottom: -50px;
 		z-index: 5;
 	}
-	.nextblock{
+	.nextblock, .nextblock4{
 		display: none;
 	}
 	.firstgreyline{
@@ -655,6 +1226,44 @@
 	.doublephone, .triplephone{
 		max-width: 100%;
 	}
+	.smallcont, .bigcont{
+		width: 188px;
+		padding: 30px 20px;
+	}
+	.startcont p, .smallcont p{
+		font-size: 16px;
+	}
+	.smallcont a, .ostzayavku span, .btnostzayav, .flexbuttons a, .startcont a{
+		font-size: 14px;
+	}
+	.btnostzayav{
+		height: 50px;
+		width: 180px;
+		padding: 15px 20px;
+	}
+	.centercont, .endcont p{
+		font-size: 12px;
+	}
+	.soccont *{
+		margin-right: 15px;
+	}
+	.soccont .vk{
+		margin-right: 0px;
+	}
+	.imgrabotaem{
+		left: 0%;
+		width: 100%;
+	}
+	.flexform{
+		max-width: 400px;
+	}
+	.forma textarea, .forma input[type=range]{
+		margin-top: 30px;
+	}
+	.forwidth{
+		width: 100%;
+		text-align: left;
+	}
 }
 
 @media(max-width: 477px){
@@ -673,6 +1282,10 @@
 		margin-left: 8px;
 	}
 	.block1, .block2, .block3, .block4, .block5, .block8, .block9{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.menu, .block1, .menu, section, .portfolio, .hotite{
 		padding-left: 15px;
 		padding-right: 15px;
 	}
@@ -778,5 +1391,45 @@
 	}
 	.block6{
 		padding: 50px 15px;
+	}
+	.smallcont{
+		width: 100%;
+		margin-top: 30px;
+	}
+	.bigcont{
+		width: 100%;
+	}
+	.bigcont{
+		margin-right: 0px;
+		height: auto;
+	}
+	.smallsconts{
+		width: 100%;
+	}
+	.endcont p{
+		margin-top: 0px;
+	}
+	.startcont a, .smallcont a{
+		margin-top: 15px;
+	}
+	.centercont, .endcont, .flexbuttons a{
+		margin-top: 30px;
+	}
+	.smallcont{
+		height: auto;
+	}
+	.btnostzayav{
+		margin-right: 0px;
+	}
+	.flexbuttons{
+		align-items: flex-start;
+		width: 100%;
+		flex-direction: column;
+	}
+	.ostzayavku p{
+		margin-top: 15px;
+	}
+	.forma label, .prava{
+		font-size: 12px;
 	}
 }

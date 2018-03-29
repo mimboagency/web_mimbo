@@ -83,6 +83,20 @@
 	.nextblock2, .nextblock3{
 		display: none;
 	}
+	.block2 h2, .block3 h2, .block4 h2, .block5 h2, .block8 h2, .block9 h2{
+		font-size: 150px;
+		margin-top: 30px;
+	}
+	.photobuyer{
+		height: 85px;
+		width: 85px;	
+	}
+	.buyer{
+		margin-left: 50px;
+	}
+	.greyline4{
+		height: 250px;
+	}
 }
 
 @media(max-width: 1800px){
@@ -434,7 +448,7 @@
 		font-size: 16px;
 	}
 	.block2, .block3{
-		height: auto;
+		height: auto!important;
 		min-height: auto;
 		padding-bottom: 50px;
 	}
@@ -465,7 +479,7 @@
 	.bgheader h1{
 		padding-top: 10%;
 	}
-	.block1, .block2, .block3, .block4, .block5, .block8, .block9{
+	.block2, .block3, .block4, .block5, .block8, .block9{
 		min-height: 580px;
 	}
 }
@@ -578,7 +592,6 @@
 	.greyline1{
 		left: 68px;
 	}	
-
 	.bgblue{
 		margin-left: -30px;
 		width: calc(100% + 60px);

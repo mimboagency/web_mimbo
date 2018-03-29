@@ -14,8 +14,8 @@ a:focus, a:hover{
 }
 .block1{
 	padding: 0px 65px;
-	min-height: 680px;
-	height: 100vh;
+	min-height: 580px;
+	height: calc(100vh - 70px);
 	position: relative;
 }
 .menu{
@@ -76,7 +76,7 @@ a:focus, a:hover{
 .cont{
 	display: inline-block;
 	padding: 8px 39px;
-	border-right: 2px solid #E5E5E5;
+	border-right: 1px solid #E5E5E5;
 	background: url(../img/phone.svg) no-repeat left center;
 	-webkit-background-size: 18px 18px;
 	background-size: 18px 18px;
@@ -103,7 +103,7 @@ a:focus, a:hover{
 	-webkit-background-size: cover!important;
 	background-size: cover!important;
 	width: 100%;
-	height: calc(100% - 140px); 		/* 70 padding-bottom + 70 menu*/
+	height: calc(100% - 70px); 		/* 70 padding-bottom*/
 	position: relative;
 	margin-top: 70px;
 }
@@ -191,10 +191,10 @@ a:focus, a:hover{
 	top: calc(50% - 2px);
 }
 .block2, .block3{
-	height: 100vh;
+	height: calc(100vh - 70px)!important;
 }
 .block2, .block3, .block4, .block5, .block8, .block9{
-	min-height: 680px;
+	min-height: 580px;
 	padding: 0px 113px;
 	background-color: #fff;
 	position: relative;

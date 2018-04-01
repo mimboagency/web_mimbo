@@ -34,6 +34,7 @@ $( document ).ready(function() {
           //navigation: false,
          // navigationTooltips: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4'],
           loopBottom: false,
+          responsiveWidth: 1100,
           sectionSelector: '.blocks1,.block2,.block3, .block4',
         //  scrollOverflow:true,
           normalScrollElements: '.block4,.block5, .block6, .block7, .block8, .block9',

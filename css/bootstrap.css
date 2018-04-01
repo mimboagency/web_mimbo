@@ -140,6 +140,7 @@
 	}
 	.leftrab h2{
 		font-size: 36px;
+        height: 80px;
 	}
 	.leftrab{
 		max-width: 450px;
@@ -319,6 +320,7 @@
 	}
 	.leftrab h2{
 		font-size: 30px;
+        height: 70px;
 	}
 	.nomerrabotaem{
 		font-size: 50px;
@@ -483,6 +485,7 @@
 	}
 	.leftrab h2{
 		font-size: 24px;
+        height: 55px;
 	}
 	.leftrab p{
 		font-size: 14px;

@@ -9,14 +9,6 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('subset-Lato-Heavy.woff2') format('woff2'),
-        url('subset-Lato-Heavy.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lato';
     src: url('subset-Lato-Medium.woff2') format('woff2'),
         url('subset-Lato-Medium.woff') format('woff');
     font-weight: 500;

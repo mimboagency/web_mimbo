@@ -423,10 +423,10 @@ $( document ).ready(function() {
         }
         
         function resize2(){
+			menuH=$(".menu").innerHeight();
             hBegin2=$(".flexkomanda").offset().top-menuH;
             hEnd2=hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
-            leftbig=$(".flexbig").offset().left;
-            menuH=$(".menu").innerHeight();
+            leftbig=$(".flexbig").offset().left;           
             hBegin=$(".block1").offset().top-menuH+$(".block1").innerHeight();
             hEnd=hBegin+ allPortfolio.eq(0).innerHeight()*(allPortfolio.length-1)-parseInt($(".portfolio").css("margin-top").split("px")[0]);
             offset1=allPortfolio.eq(0).offset().top-menuH;

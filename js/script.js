@@ -86,6 +86,10 @@ $( document ).ready(function() {
         WOW.prototype.addBox = function(element) {
             this.boxes.push(element);
         };
+        
+        var wow = new WOW();
+        wow.init();
+        
         $('.wow').on('scrollSpy:exit', function() {
             $(this).css({
               'visibility': 'hidden',

@@ -304,6 +304,16 @@
 		left: -190px;
 		top: calc(50% - 190px);
 	}
+	.circleanim{
+		width: 400px;
+		height: 400px;
+		left: -200px;
+		top: calc(50% - 200px);
+	}
+	.squareanim{
+		width: 460px;
+		left:-230px;	
+	}
 	.leftrab{
 		max-width: 400px;
 	}
@@ -570,6 +580,16 @@
 		left: -140px;
 		top: calc(50% - 140px);
 	}
+	.circleanim{
+		width: 300px;
+		height: 300px;
+		left: -150px;
+		top: calc(50% - 150px);
+	}
+	.squareanim{
+		width: 360px;
+		left:-180px;	
+	}
 	.numberrab{
 		font-size: 100px;
 		margin-left: 130px;
@@ -736,6 +756,16 @@
 		height: 250px;
 		left: -125px;
 		top: calc(50% - 125px);
+	}
+	.circleanim{
+		width: 270px;
+		height: 270px;
+		left: -135px;
+		top: calc(50% - 135px);
+	}
+	.squareanim{
+		width: 350px;
+		left:-175px;	
 	}
 	.numberrab{
 		font-size: 60px;

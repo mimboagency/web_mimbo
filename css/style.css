@@ -50,106 +50,91 @@ ul{
 @keyframes Title {
   0%   { 
 	padding-top:0px;
-  opacity:1;
+	opacity:1;
   }
   50% { 
-  padding-top:104px;
+	padding-top:104px;
     opacity:0;
   }
   100% {
-	  padding-top:0px;
-	   opacity:1;
+	padding-top:0px;
+	opacity:1;
   }
 }
 
 @keyframes Title2 {
   0%   { 
 	padding-left:0px;
-  opacity:1;
+    opacity:1;
   }
   50% { 
-padding-left:213px;
+	padding-left:213px;
     opacity:0;
   }
   100% {
 	padding-left:0px;
-	   opacity:1;
+	opacity:1;
   }
 }
 
 
 @keyframes Portfolio {
   0%{ 
- margin-left:0px;
-  opacity:1;
+	margin-left:0px;
+	opacity:1;
   }
   50%{ 
-   margin-left:-200px;
+	margin-left:-200px;
     opacity:0;
   }
   100%{
-	  margin-left:0px;
-	   opacity:1;
+	margin-left:0px;
+	opacity:1;
   }
 }
 
 @keyframes fadeInN {
   0%{ 
-
   opacity:1;
   }
   25%{ 
-
     opacity:0;
   }
    50%{ 
-
     opacity:0;
   }
-  100%{
-	
+  100%{	
 	   opacity:1;
   }
 }
-
 .bgheader2 {
 	background-size:140%;
 }
-
-
 @keyframes scaleHeaders {
   0%{ 
 	background-size:100%;
-
   }
   100%{
-	  background-size:100%;
+	background-size:100%;
   }
 }
 .scaleHeader {
-	 -webkit-animation-name: scaleHeaders;
-  animation-name: scaleHeaders;
+	-webkit-animation-name: scaleHeaders;
+    animation-name: scaleHeaders;
     -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-   -webkit-animation-timing-function:  ease-in;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function:  ease-in;
 	animation-timing-function:ease-in;
-	
 }
-
-
-
 .prtnext .vuborrab{
 	animation-name:Portfolio;
 	animation-duration: 1.2s;
 	animation-timing-function: cubic-bezier(.8,-.5,.2,0.2);
 }
-
-
 .portfolio h2 {
 	overflow:hidden;
 	height:104px;
 }
-
 .prtnext p{
 	animation-name:fadeInN;
 	animation-duration: 1.5s;
@@ -160,13 +145,11 @@ padding-left:213px;
 	animation-duration: 1.5s;
 	animation-timing-function: cubic-bezier(.8,-.5,.2,0.2);
 }
-
 .prtnext h2{
 	animation-name:Title;
 	animation-duration: 1.2s;
 	animation-timing-function: cubic-bezier(.8,-.5,.2,0.2);
 }
-
 .prtnext .numberrab {
 	width:213px;
 	animation-name:Title2;
@@ -174,7 +157,6 @@ padding-left:213px;
 	animation-timing-function: cubic-bezier(.8,-.5,.2,0.2);
 	overflow:hidden;
 }
-
 .linemenu{
 	width: calc(100% - 5px);
 	height: 2px;
@@ -971,21 +953,17 @@ padding-left:213px;
 	border-radius: 50%;
 	width: 449px;
 	height: 449px;
-	margin-left:-10px;
-	margin-top:-25px;
+	left: -225px;
+	top: calc(50% - 225px);
 }
 .squareanim{
 	border-radius: 100% 80% 80% 100% / 80% 70% 80% 50%/ 80%;
 	width: 524px;
-	height: 424px;
-	margin-left:-50px;	
+	left:-262px;	
 }
-
-
 .squareanim .bgrhomb {
 	transition: all 1s cubic-bezier(.8,-.5,.3,1.8);	
 }
-
 .bgrhomb{
 	width: 144%;
 	height: 144%;

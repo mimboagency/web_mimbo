@@ -68,11 +68,32 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        function goAnimation5(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInUpNext');
+            obj.attr( "data-wow-offset", 50 );
+            obj.attr( "data-wow-duration", "1s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        function goAnimation6(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInUp');
+            obj.attr( "data-wow-offset", 50 );
+            obj.attr( "data-wow-duration", "2.8s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        function goAnimation7(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeIn');
+            obj.attr( "data-wow-offset", 150 );
+            obj.attr( "data-wow-duration", "1.5s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
         goAnimation($('.whiteline1'),0);
         goAnimation2($('.whiteline2'),0.3);
         goAnimation($('.greyline1'),0);
-        goAnimation2($('.greyline2'),0.3);
-        goAnimation2($('.greyline3'),0);    
+        goAnimation2($('.greyline2'),0.3);			
+        goAnimation2($('.greyline3'),0);	
         goAnimation2($('.greyline4'),0);
         goAnimation($('.greyline5'),0);
         goAnimation2($('.greyline6'),0);
@@ -80,16 +101,20 @@ $( document ).ready(function() {
         goAnimation2($('.greyline8'),0);
         goAnimation($('.greyline9'),0);
         goAnimation($('.greyline00copy'),0);
-        goAnimation($('.greyline0'),0.3);    
+        goAnimation($('.greyline0'),0.3);	
         goAnimation($('.greyline00'),0);
         goAnimation3($('h2'),0);
+        goAnimation5($('.nextblock'),0.5);
+        goAnimation5($('.nextblock2'),0.5);
+        goAnimation5($('.nextblock3'),0.5);
+        goAnimation6($('.manydevices'),0);       
+        goAnimation7($('.doublephone'),0);
+        goAnimation7($('.triplephone'),0);
         WOW.prototype.addBox = function(element) {
             this.boxes.push(element);
-        };
-        
+        };       
         var wow = new WOW();
         wow.init();
-        
         $('.wow').on('scrollSpy:exit', function() {
             $(this).css({
               'visibility': 'hidden',

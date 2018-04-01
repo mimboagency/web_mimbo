@@ -320,6 +320,10 @@ $( document ).ready(function() {
                 prewH=hNow;
                 if (hNow<offset1){
                     flag=-1;
+					zamena(0);
+                    $(".rhomb").removeClass("circleanim");
+                    $(".rhomb").removeClass("squareanim");
+                    $(".portfolio").addClass("prtnext");
                 }
                 if (hNow>=offset4 && flWheel==false){
                     console.log(1);

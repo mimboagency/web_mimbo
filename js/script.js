@@ -427,6 +427,7 @@ $( document ).ready(function() {
         }        
         function resize2(){
 			menuH=$(".menu").innerHeight();
+			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=$(".flexkomanda").offset().top-menuH;
             hEnd2=hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
             leftbig=$(".flexbig").offset().left;           

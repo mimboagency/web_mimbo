@@ -254,7 +254,6 @@ $( document ).ready(function() {
             zamena(0);                        
             $(window).scroll(function(){         
                 hNow=$(window).scrollTop();
-                console.log(hNow);
                 if(f2==1 && hNow<hEnd){
                     $(".portfolio").css("position", "fixed");
                     $(".portfolio").css("top", menuH+"px");
@@ -300,11 +299,9 @@ $( document ).ready(function() {
                      }
                      else{
                          if (hNow<=offset3 && flag==4){
-                            console.log(9);
                             flag=3;
                         }
                         else if (hNow>offset2 && hNow<=offset3 && flag==3){
-                            console.log(10);
                             flag=2;
                             $(".portfolio").addClass("prtnext");
                             zamena(1);
@@ -312,11 +309,9 @@ $( document ).ready(function() {
                             $(".rhomb").removeClass("squareanim");
                         }
                         else if (hNow<=offset2 && flag==2){
-                            console.log(11);
                             flag=1;
                         }
                         else if (hNow>offset1 && hNow<=offset2 && flag==1){
-                            console.log(12);
                             flag=0;
                             $(".rhomb").removeClass("circleanim");
                             $(".portfolio").addClass("prtnext");
@@ -329,7 +324,6 @@ $( document ).ready(function() {
                     flag=-1;
                 }
                 if (hNow>=offset4 && flWheel==false){
-                    console.log(1);
                     zamena(2);
                     flag=4;
                     $(".rhomb").addClass("circleanim");
@@ -338,8 +332,7 @@ $( document ).ready(function() {
                     window.removeEventListener("wheel", onWheel);
                     flWheel=true;
                 }
-                else if (hNow>offset3 && hNow<offset4 && flWheel==true){      
-                    console.log(2);                
+                else if (hNow>offset3 && hNow<offset4 && flWheel==true){              
                     window.addEventListener("wheel", onWheel);
                     flWheel=false;
                 }
@@ -373,16 +366,13 @@ $( document ).ready(function() {
                 }
             }
             else{      
-                if (hNow>offset3 && hNow<=offset4 && flag==4){ 
-                    console.log(20);                
+                if (hNow>offset3 && hNow<=offset4 && flag==4){             
                     scroll(offset3);                
                 }
                 else if (hNow>offset2 && hNow<=offset3 && flag==3){
-                    console.log(21);  
                     scroll(offset2);
                 }
                 else if (hNow>offset1 && hNow<=offset2 && (flag==2 || flag==1)){
-                    console.log(22);  
                     scroll(offset1);
                 }
                 else if (hNow<=offset1){
@@ -390,8 +380,7 @@ $( document ).ready(function() {
                 }
             }
             e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-        }
-        
+        }     
         window.addEventListener("wheel", onWheel);
         function scroll(numberscroll){
             $(".portfolio").removeClass("prtnext");
@@ -431,8 +420,7 @@ $( document ).ready(function() {
                      $(".flexbig").attr("style", "");
                 } 
             });
-        }
-        
+        }        
         function resize2(){
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=$(".flexkomanda").offset().top-menuH;
@@ -445,8 +433,7 @@ $( document ).ready(function() {
             offset2=allPortfolio.eq(1).offset().top-menuH;
             offset3=allPortfolio.eq(2).offset().top-menuH;
             offset4=$("#komanda").offset().top-menuH;
-        }
-        
+        }       
         $(window).resize(function(){                
             resize2();
         });

@@ -939,6 +939,9 @@ padding-left:213px;
 .btnsmotr:hover{
 	background-position: right center;
 }
+.portfolionone .btnsmotr {    
+	display: inline;
+}
 .greyrec{
 	height: calc(100vh - 200px);
 	width: 560px;

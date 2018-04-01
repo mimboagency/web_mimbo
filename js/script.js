@@ -146,8 +146,7 @@ $( document ).ready(function() {
         }
     }
     // index.html----------------------------------------------------------------------------------
-    if ($(".bgheader2").html()!=undefined){
-        $(".portfolionone").css("height", $(".portfolio").innerHeight());
+    if ($(".bgheader2").html()!=undefined){       
         allPortfolio=$(".portfolionone");
         resize2();
         function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
@@ -267,7 +266,7 @@ $( document ).ready(function() {
                 }
                 else if(hNow>hEnd && f2==0){                
                     $(".portfolio").css("position", "absolute");
-                    topa=allPortfolio.eq(0).innerHeight()*(allPortfolio.length-1)-menuH;
+                    topa=allPortfolio.eq(0).innerHeight()*(allPortfolio.length-1);
                     $(".portfolio").css("top", topa +"px");                
                     f2=1;        
                 }
@@ -423,12 +422,18 @@ $( document ).ready(function() {
         }
         
         function resize2(){
+			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=$(".flexkomanda").offset().top-menuH;
             hEnd2=hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
             leftbig=$(".flexbig").offset().left;
             menuH=$(".menu").innerHeight();
             hBegin=$(".block1").offset().top-menuH+$(".block1").innerHeight();
-            hEnd=hBegin+ allPortfolio.eq(0).innerHeight()*(allPortfolio.length-1)-parseInt($(".portfolio").css("margin-top").split("px")[0]);
+            hEnd=allPortfolio.eq(allPortfolio.length-1).offset().top;
+			console.log(hBegin);
+			console.log(allPortfolio.eq(0).innerHeight());
+			console.log(allPortfolio.length-1);
+			console.log(hEnd);
+			console.log(allPortfolio.eq(allPortfolio.length-1).offset().top);
             offset1=allPortfolio.eq(0).offset().top-menuH;
             offset2=allPortfolio.eq(1).offset().top-menuH;
             offset3=allPortfolio.eq(2).offset().top-menuH;

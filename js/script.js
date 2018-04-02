@@ -34,6 +34,7 @@ $( document ).ready(function() {
           //navigation: false,
          // navigationTooltips: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4'],
           loopBottom: false,
+          responsiveWidth: 990,
           sectionSelector: '.blocks1,.block2,.block3, .block4',
         //  scrollOverflow:true,
           normalScrollElements: '.block4,.block5, .block6, .block7, .block8, .block9',
@@ -67,11 +68,32 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        function goAnimation5(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInUpNext');
+            obj.attr( "data-wow-offset", 50 );
+            obj.attr( "data-wow-duration", "1s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        function goAnimation6(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInUp');
+            obj.attr( "data-wow-offset", 50 );
+            obj.attr( "data-wow-duration", "2.8s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        function goAnimation7(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeIn');
+            obj.attr( "data-wow-offset", 150 );
+            obj.attr( "data-wow-duration", "1.5s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
         goAnimation($('.whiteline1'),0);
         goAnimation2($('.whiteline2'),0.3);
         goAnimation($('.greyline1'),0);
-        goAnimation2($('.greyline2'),0.3);
-        goAnimation2($('.greyline3'),0);    
+        goAnimation2($('.greyline2'),0.3);			
+        goAnimation2($('.greyline3'),0);	
         goAnimation2($('.greyline4'),0);
         goAnimation($('.greyline5'),0);
         goAnimation2($('.greyline6'),0);
@@ -79,12 +101,20 @@ $( document ).ready(function() {
         goAnimation2($('.greyline8'),0);
         goAnimation($('.greyline9'),0);
         goAnimation($('.greyline00copy'),0);
-        goAnimation($('.greyline0'),0.3);    
+        goAnimation($('.greyline0'),0.3);	
         goAnimation($('.greyline00'),0);
         goAnimation3($('h2'),0);
+        goAnimation5($('.nextblock'),0.5);
+        goAnimation5($('.nextblock2'),0.5);
+        goAnimation5($('.nextblock3'),0.5);
+        goAnimation6($('.manydevices'),0);       
+        goAnimation7($('.doublephone'),0);
+        goAnimation7($('.triplephone'),0);
         WOW.prototype.addBox = function(element) {
             this.boxes.push(element);
-        };
+        };       
+        var wow = new WOW();
+        wow.init();
         $('.wow').on('scrollSpy:exit', function() {
             $(this).css({
               'visibility': 'hidden',
@@ -131,6 +161,9 @@ $( document ).ready(function() {
             }
             else{
                 $(".number").attr("style", "");
+            }
+            if ($(window).outerWidth()<991){
+                $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
             }
         }
         resize();
@@ -251,9 +284,11 @@ $( document ).ready(function() {
         }
         if ($(".greyrec").html()!=undefined)
         {
+            console.log(-2);
             zamena(0);                        
-            $(window).scroll(function(){         
-                hNow=$(window).scrollTop();
+            $(window).scroll(function(){  
+                console.log(-3);
+                hNow=Math.ceil($(window).scrollTop());
                 if(f2==1 && hNow<hEnd){
                     $(".portfolio").css("position", "fixed");
                     $(".portfolio").css("top", menuH+"px");
@@ -276,12 +311,18 @@ $( document ).ready(function() {
                      $(".portfolio").css("top", 0+"px");    
                      flag=0;
                 } 
+                console.log(hNow);
+                console.log(hBegin);
+                console.log(hEnd);
                 if (hNow>=hBegin && hNow<hEnd){
+                    console.log(-1);
                     if(prewH<hNow){                     
                         if(hNow>=offset1 && flag==-1){
+                            console.log(0);
                             flag=0;
                         }
                         else if (hNow>=offset1 && hNow<offset2 && flag==0){
+                            console.log(1);
                             flag=1;
                             $(".portfolio").addClass("prtnext");
                             zamena(1);                            
@@ -289,8 +330,10 @@ $( document ).ready(function() {
                         else if (hNow>=offset2 && flag==1){
                             flag=2;
                             $(".rhomb").addClass("circleanim");
+                            console.log(2);
                         }
                         else if (hNow>=offset2 && hNow<offset3 && flag==2){
+                            console.log(3);
                             flag=3;
                             $(".portfolio").addClass("prtnext");
                             zamena(2);
@@ -428,15 +471,15 @@ $( document ).ready(function() {
         function resize2(){
 			menuH=$(".menu").innerHeight();
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
-            hBegin2=$(".flexkomanda").offset().top-menuH;
-            hEnd2=hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
+            hBegin2=Math.ceil($(".flexkomanda").offset().top-menuH);
+            hEnd2=Math.ceil(hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight());
             leftbig=$(".flexbig").offset().left;           
-            hBegin=$(".block1").offset().top-menuH+$(".block1").innerHeight();
-            hEnd=allPortfolio.eq(allPortfolio.length-1).offset().top;
-            offset1=allPortfolio.eq(0).offset().top-menuH;
-            offset2=allPortfolio.eq(1).offset().top-menuH;
-            offset3=allPortfolio.eq(2).offset().top-menuH;
-            offset4=$("#komanda").offset().top-menuH;
+            hBegin=Math.ceil($(".block1").offset().top-menuH+$(".block1").innerHeight());
+            hEnd=Math.ceil(allPortfolio.eq(allPortfolio.length-1).offset().top);
+            offset1=Math.ceil(allPortfolio.eq(0).offset().top-menuH);
+            offset2=Math.ceil(allPortfolio.eq(1).offset().top-menuH);
+            offset3=Math.ceil(allPortfolio.eq(2).offset().top-menuH);
+            offset4=Math.ceil($("#komanda").offset().top-menuH);
         }       
         $(window).resize(function(){                
             resize2();

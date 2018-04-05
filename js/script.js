@@ -284,9 +284,11 @@ $( document ).ready(function() {
         }
         if ($(".greyrec").html()!=undefined)
         {
+            console.log(-2);
             zamena(0);                        
-            $(window).scroll(function(){         
-                hNow=$(window).scrollTop();
+            $(window).scroll(function(){  
+                console.log(-3);
+                hNow=Math.ceil($(window).scrollTop());
                 if(f2==1 && hNow<hEnd){
                     $(".portfolio").css("position", "fixed");
                     $(".portfolio").css("top", menuH+"px");
@@ -309,12 +311,18 @@ $( document ).ready(function() {
                      $(".portfolio").css("top", 0+"px");    
                      flag=0;
                 } 
+                console.log(hNow);
+                console.log(hBegin);
+                console.log(hEnd);
                 if (hNow>=hBegin && hNow<hEnd){
+                    console.log(-1);
                     if(prewH<hNow){                     
                         if(hNow>=offset1 && flag==-1){
+                            console.log(0);
                             flag=0;
                         }
                         else if (hNow>=offset1 && hNow<offset2 && flag==0){
+                            console.log(1);
                             flag=1;
                             $(".portfolio").addClass("prtnext");
                             zamena(1);                            
@@ -322,8 +330,10 @@ $( document ).ready(function() {
                         else if (hNow>=offset2 && flag==1){
                             flag=2;
                             $(".rhomb").addClass("circleanim");
+                            console.log(2);
                         }
                         else if (hNow>=offset2 && hNow<offset3 && flag==2){
+                            console.log(3);
                             flag=3;
                             $(".portfolio").addClass("prtnext");
                             zamena(2);
@@ -461,15 +471,15 @@ $( document ).ready(function() {
         function resize2(){
 			menuH=$(".menu").innerHeight();
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
-            hBegin2=$(".flexkomanda").offset().top-menuH;
-            hEnd2=hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
+            hBegin2=Math.ceil($(".flexkomanda").offset().top-menuH);
+            hEnd2=Math.ceil(hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight());
             leftbig=$(".flexbig").offset().left;           
-            hBegin=$(".block1").offset().top-menuH+$(".block1").innerHeight();
-            hEnd=allPortfolio.eq(allPortfolio.length-1).offset().top;
-            offset1=allPortfolio.eq(0).offset().top-menuH;
-            offset2=allPortfolio.eq(1).offset().top-menuH;
-            offset3=allPortfolio.eq(2).offset().top-menuH;
-            offset4=$("#komanda").offset().top-menuH;
+            hBegin=Math.ceil($(".block1").offset().top-menuH+$(".block1").innerHeight());
+            hEnd=Math.ceil(allPortfolio.eq(allPortfolio.length-1).offset().top);
+            offset1=Math.ceil(allPortfolio.eq(0).offset().top-menuH);
+            offset2=Math.ceil(allPortfolio.eq(1).offset().top-menuH);
+            offset3=Math.ceil(allPortfolio.eq(2).offset().top-menuH);
+            offset4=Math.ceil($("#komanda").offset().top-menuH);
         }       
         $(window).resize(function(){                
             resize2();

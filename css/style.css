@@ -889,7 +889,7 @@ ul{
 	justify-content: space-between;
 }
 .leftrab{
-	margin-top: 200px;
+    align-self: center;
 	max-width: 570px;
 }
 .leftrab h2{

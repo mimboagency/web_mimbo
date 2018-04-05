@@ -118,9 +118,6 @@
 	.bgheader2 h1{
 		font-size: 50px;
 	}
-	.leftrab{
-		margin-top: 100px;
-	}
 	.ssulki a{
 		font-size: 25px;
 		line-height: 30px;
@@ -1047,6 +1044,35 @@
 	.flexform{
 		max-width: 680px;
 	}
+    .leftrab{
+        position: absolute;
+        right:0px;
+        height: 100%;        
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-right: 20px;
+    }
+    .flexrab{       
+        position: relative;
+        justify-content: flex-end;        
+    }
+    .leftrab p{
+        display: none;
+    }
+    .leftrab h2{
+        margin-top: 30px;
+    }
+    .btnsmotr{
+        margin-top: 0px;
+        margin-bottom: 30px;
+        display: block;        
+    }
+    .greyrec{
+        height: calc(100vh - 70px);
+    }
 }
 
 @media(max-width: 767px){
@@ -1151,7 +1177,7 @@
 }
 
 @media(max-width: 600px){
-	.block1, .block2, .block3, .block4, .block5, .block8, .block9{
+	.block2, .block3, .block4, .block5, .block8, .block9{
 		min-height: auto;
 		height: auto;
 		padding-left: 30px;
@@ -1161,7 +1187,7 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.bgheader{
+	.bgheader:not(.bgheader2){
 		height: auto;
 		padding-bottom: 30px;
 	}
@@ -1294,6 +1320,12 @@
 		width: 100%;
 		text-align: left;
 	}
+    .rhomb{
+        width: 170px;
+        height: 170px;
+        left: -85px;
+        top: calc(50% - 85px);
+    }
 }
 
 @media(max-width: 477px){

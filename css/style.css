@@ -960,10 +960,25 @@ ul{
 	top: calc(50% - 225px);
 }
 .squareanim{
-	border-radius: 100% 80% 80% 100% / 80% 70% 80% 50%/ 80%;
-	width: 524px;
-	left:-262px;	
+	/*border-radius: 100% 80% 80% 100% / 80% 70% 80% 50%;*/
+    border-radius:0px;
+    width: 370px!important;
+    height: 370px!important;
+	left:-170px!important;
+    -webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
+.squareanim .bgrhomb {
+        -webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
 .squareanim .bgrhomb {
 	transition: all 1s cubic-bezier(.8,-.5,.3,1.8);	
 }
@@ -973,14 +988,14 @@ ul{
 	position: absolute;
 	left: -22%;
 	top: -22%;
-	-webkit-background-size: cover!important;
-	background-size: cover!important;
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-	transition: all 1s;
+	transition: border 1s!important;
+    transition: background 0s!important;
+    transition: rotate 1s!important;
 	background-size: cover!important;
 	-webkit-background-size: cover!important;
 }

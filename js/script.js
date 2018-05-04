@@ -18,27 +18,23 @@ $( document ).ready(function() {
     };
     $(".btnmenu").click(function(){
          open();
-     });
-     $(".closemenu").click(function(){
-         open();
-     });
-     $(".ssulki a").click(function(){
-         open();
-         scrollAnimate(this);
-     });
-    //fullpage.js
+    });
+    $(".closemenu").click(function(){
+        open();
+    });
+    $(".ssulki a").click(function(){
+        open();
+        scrollAnimate(this);
+    });
     if ($(".block2").html()!=undefined){
         $('body').fullpage({
-          scrollBar: true,
-          fitToSectionDelay:300,
-          //navigation: false,
-         // navigationTooltips: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4'],
-          loopBottom: false,
-          responsiveWidth: 990,
-          sectionSelector: '.blocks1,.block2,.block3, .block4',
-        //  scrollOverflow:true,
-          normalScrollElements: '.block4,.block5, .block6, .block7, .block8, .block9',
-         fitToSection: false
+            scrollBar: true,
+            fitToSectionDelay:300,   
+            loopBottom: false,
+            responsiveWidth: 990,
+            sectionSelector: '.blocks1,.block2,.block3, .block4', 
+            normalScrollElements: '.block4,.block5, .block6, .block7, .block8, .block9',
+            fitToSection: false
         });
         function goAnimation(obj,delay){
             obj.addClass('wow');
@@ -126,9 +122,12 @@ $( document ).ready(function() {
         var lines=$(".whiteline, .greyline0, .greyline00, .greyline00copy");
         function resize(){
             for (i=0; i<modules.length; i++){
-                if (i<9)
+                if (i<9){
                     num="0";
-                else num="";
+                }
+                else {
+                    num="";
+                }
                 num=num+(i+1)+"";
                 modules.eq(i).text(num);
             }
@@ -138,10 +137,6 @@ $( document ).ready(function() {
                 lines.eq(i).css("height", heightline+15+"px");
                 lines.eq(i).css("bottom", -heightline+"px");
             }
-            /*parent=$(".greyline0").parent();
-            heightline=parent.parent().parent().parent().offset().top+parent.parent().parent().parent().innerHeight()-parent.offset().top-parent.innerHeight();
-            $(".greyline0").css("height", heightline+15+"px");
-            $(".greyline0").css("bottom", -heightline+"px");*/
             $(".greyline4").css("left", $(".greyline6").offset().left);
             $(".greyline3").css("left", $(".greyline0").offset().left);
             $(".greyline03").css("left", $(".greyline00").offset().left);

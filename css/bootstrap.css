@@ -309,8 +309,10 @@
 		top: calc(50% - 200px);
 	}
 	.squareanim{
-		width: 460px;
-		left:-230px;	
+		width: 285px;
+        height: 285px;
+        left:-142.5px;
+        top:calc(50% - 142.5px);
 	}
 	.leftrab{
 		max-width: 400px;
@@ -587,8 +589,10 @@
 		top: calc(50% - 150px);
 	}
 	.squareanim{
-		width: 360px;
-		left:-180px;	
+		width: 214px;
+        height: 214px;
+        left:-107px;
+        top:calc(50% - 107px);
 	}
 	.numberrab{
 		font-size: 100px;
@@ -764,8 +768,10 @@
 		top: calc(50% - 135px);
 	}
 	.squareanim{
-		width: 350px;
-		left:-175px;	
+		width: 192px;
+        height: 192px;
+        left:-96px;
+        top:calc(50% - 96px);
 	}
 	.numberrab{
 		font-size: 60px;
@@ -811,7 +817,7 @@
 	}
 }
 
-@media(max-width: 990px){
+@media(max-width: 990px){  
 	.greyline4, .greyline6{
 		display: none;
 	}
@@ -999,7 +1005,7 @@
 		margin-top: 10px;
 	}
 	.costusl div{
-		margin-top: 35px;
+		margin-bottom: 35px;
 	}
 	.uslugi{
 		max-width: 600px;
@@ -1072,6 +1078,9 @@
     }
     .greyrec{
         height: calc(100vh - 70px);
+    }
+    .portfolio{
+        min-height: 450px;
     }
 }
 
@@ -1174,9 +1183,138 @@
 	.bigfoto{
 		display: none;
 	}
+    .flexbig{
+        padding: 80px 0px;
+    }
+    .flexkomanda{
+        max-width: 410px;
+        margin: 0 auto;
+    }
+    .block1{
+        min-height: 450px;
+    }
+    .rightagency a{
+        font-size: 12px;
+        margin-top: 220px;
+        margin-right: 20px;
+    }
+    .bgheader2 h1 {
+        font-size: 24px;
+        max-width: 180px;
+    }
+    .costusl{
+        width: 85px;
+    }
+    .usl{
+        width: 220px;
+    }
+    .uslugi{
+        max-width: 530px;
+    }
+    .leftrab h2{
+        font-size: 20px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    .leftrab{
+        max-width: 250px;
+    }
+    .btnsmotr{
+        margin-bottom: 20px;
+    }
+    .opisslovo{
+        font-size: 100px;
+        bottom: 0px;
+    }
+    .ssulki a{
+        font-size: 18px;
+        line-height: 22px;
+        padding-right: 50px;
+    }
+    .ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .opisslovomenu{
+        right: -30px;
+    }
+    .menublock{
+        min-height: 500px;
+    }
+    .closemenu{
+        top: 100px;
+    }
+    .ssulki a:hover{
+        -webkit-background-size: 15px;
+        background-size: 15px;
+    }
 }
 
 @media(max-width: 600px){
+    .ssulki a{
+        font-size: 16px;
+        line-height: 18px;
+        padding-right: 30px;
+    }
+    .ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .ssulki a:hover{
+        -webkit-background-size: 10px;
+        background-size: 10px;
+    }
+    .opisslovomenu{
+        right: -20px;
+    }
+    .menublock{
+        min-height: 400px;
+    }
+    .closemenu{
+        top: 30px;
+    }
+    .flexmenu{
+        padding-left: 30px;
+    }
+    .greymenu {
+        width: calc(100% - 50px);
+        left: 15px;
+        top: 15px;
+        height: calc(100% - 75px);
+    }   
+    .usl{
+        width: 100%;
+        padding-right: 0px;
+    }
+    .costusl{
+        width: 95px;
+        margin-top: 15px;
+    }
+    .costusl div{
+        margin-bottom: 15px;
+    }
+    .ul li{
+        padding-left: 15px;
+    }
+    .blueline{
+        width: 20px;
+        left: -10px;
+    }
+    .uslugi{
+        max-width: 310px;
+    }
+    .costusl:last-child{
+        padding-right: 0px;
+    }
+    .flexusl{
+        align-items: stretch;
+    }
+    .block1, .portfolio{
+        min-height: 350px;
+    }
+    .rightagency a{
+        display: none;
+    }
 	.block2, .block3, .block4, .block5, .block8, .block9{
 		min-height: auto;
 		height: auto;
@@ -1187,7 +1325,7 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.bgheader:not(.bgheader2){
+	/*.bgheader:not(.bgheader2){
 		height: auto;
 		padding-bottom: 30px;
 	}
@@ -1202,7 +1340,30 @@
 	.soc{
 		bottom: -50px;
 		z-index: 5;
+	}*/
+    
+    /* новый код*/
+    
+    .bgheader p{
+		font-size: 42px;
+        left: 40px;
+        bottom: 20px;
 	}
+    .bgheader h1{
+		margin-top: 80px;
+        padding-top: 0px;
+	}
+    .bgheader h2{
+		margin-bottom: 120px;       
+	}
+    .bgheader:not(.bgheader2){
+		display: flex;
+        flex-direction: column;
+        justify-content: center;
+	}
+    
+    /* конец*/
+    
 	.nextblock, .nextblock4{
 		display: none;
 	}
@@ -1212,9 +1373,6 @@
 	.bgheader h1{
 		margin-left: 30px;
 		font-size: 30px;
-	}
-	.block2 h2{
-		margin-top: 100px;
 	}
 	.greyline1{
 		left: 68px;
@@ -1326,9 +1484,146 @@
         left: -85px;
         top: calc(50% - 85px);
     }
+    .circleanim{
+        width: 184px;
+        height: 184px;
+        left: -92px;
+        top: calc(50% - 92px);
+    }
+    .squareanim {
+        width: 130px;
+        height: 130px;
+        left: -65px;
+        top: calc(50% - 65px);
+    }   
+    .leftrab h2 {
+        font-size: 18px;
+        height: 40px;
+    }
+    .leftrab {
+        max-width: 200px;
+    }
+    .vuborrab ul li{
+         font-size: 10px;
+         padding-left: 12px;
+    }
+    .vuborrab{
+        padding-right: 0px;
+    }
+    .flexrab{
+        margin-left: 100px;
+    }
+    .opisslovo{
+        font-size: 80px;
+    }
+    .forgreyusl{
+        margin-top: 30px;
+    }
 }
 
 @media(max-width: 477px){
+    .flexmenu{
+        padding-left: 15px;
+    }
+    .ssulki a{
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 15px;
+    }
+    .ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .opisslovomenu{
+        display: none;
+    }
+    .menublock{
+        min-height: 350px;
+    }
+    .foto{
+        text-align: center;      
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 30px;
+        width: 126px;
+    }
+    .foto:nth-child(2n-1){
+        margin-left: 0px;
+    }
+    .name{
+        margin-top: 15px;
+    }
+    .doljnost{
+        margin-top: 10px;
+    }
+    .activefoto *{
+        opacity: 1!important;
+    }
+    .flexbig, .linefoto{
+        display: none!important;
+    }
+    .flexsmall{
+        margin-top: 0px;
+        justify-content: center;
+    }
+    .opischlena{
+        display: block;
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: normal;
+        color: #B1B1B1;       
+    }
+    .smallfotos{
+        max-width: 100%;
+        margin-right: 0px;
+    }
+    .rhomb{
+        width: 140px;
+        height: 140px;
+        left: -70px;
+        top: calc(50% - 70px);
+    }
+    .circleanim{
+        width: 150px;
+        height: 150px;
+        left: -75px;
+        top: calc(50% - 75px);
+    }
+    .squareanim {
+        width: 110px;
+        height: 110px;
+        left: -55px;
+        top: calc(50% - 55px);
+    }
+    .leftrab{
+        margin-right: 10px;
+        width: 150px;
+        font-size: 16px;
+    }
+    .btnsmotr{
+        padding-right: 35px;
+    }
+    .greyrec{
+        width: 100px;
+        margin-left: 80px;
+        height: calc(100vh - 60px);
+    }
+    .flexrab{
+        margin-left: 90px;
+    }
+    .numberrab{
+        display: none;
+    }
+    .vuborrab{
+        left: 15px;
+    }
+    .uslugi{
+        max-width: 270px;
+    }
+    .costusl{
+        font-size: 10px;
+        width: 81px;
+    }
 	.module{
 		width: 50%;
 		padding-right: 5px;
@@ -1392,22 +1687,49 @@
 	.bgheader h1{
 		font-size: 24px;
 		margin-left: 20px;
-		padding-top: 70px;
+		margin-top: 50px;
 	}
 	.bgheader h2{
 		margin-left: 30px;
 		font-size: 14px;
 		padding-top: 15px;
+        margin-bottom: 80px;
 	}
 	.bgheader p{
 		font-size: 30px;
-		margin-top: 50px;
 		left: 30px;
 	}
+    /* old (height auto)
 	.bgheader{
 		padding-bottom: 50px;
 		margin-top: 60px;
 	}
+    .block2 h2{
+		margin-top: 70px;
+	}
+    */
+    /* new */
+    .bgheader{
+		height: calc(100% - 60px);
+        margin-top: 60px;
+	}
+    .soc{
+        right: 15px;
+        bottom: 12px;
+    }
+    .menublock .soc{
+        right: 40px;
+    }
+    
+    /* end */
+    
+    .bgheader2{
+        margin-top: 60px;
+        height: calc(100% - 60px);
+    }
+    .block1{
+        height: calc(100vh - 60px);
+    }    
 	.block5{
 		padding-bottom: 70px;
 	}
@@ -1416,10 +1738,7 @@
 	}
 	.block2 h2, .block3 h2, .block4 h2, .block5 h2, .block8 h2, .block9 h2{
 		font-size: 50px;
-	}
-	.block2 h2{
-		margin-top: 70px;
-	}
+	}	
 	.opis1{
 		width: 180px;
 	}
@@ -1494,4 +1813,8 @@
 	.forma label, .prava{
 		font-size: 12px;
 	}
+}
+
+@media(max-width: 445px){
+    
 }

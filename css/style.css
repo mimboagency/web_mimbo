@@ -760,6 +760,9 @@ ul{
 	-o-transition: all 400ms;
 	transition: all 400ms;
 }
+.ssulki a:nth-child(1){
+    margin-top: 0px;
+}
 .ssulki a:nth-child(1), .ssulki a:nth-child(2), .ssulki a:nth-child(3){
 	font-size: 60px;
 	line-height: 70px;
@@ -772,7 +775,7 @@ ul{
 .closemenu{
 	position: absolute;
 	right: 136px;
-	top: 195px;
+	top: 155px;
 	display: table;
 	cursor: pointer;
 	z-index: 1;
@@ -960,17 +963,12 @@ ul{
 	top: calc(50% - 225px);
 }
 .squareanim{
-	/*border-radius: 100% 80% 80% 100% / 80% 70% 80% 50%;*/
     border-radius:0px;
-    width: 320px!important;
-    height: 320px!important;
-	left:-170px!important;
-    top:calc(50% - 160px)!important;
+    width: 320px;
+    height: 320px;
+	left:-170px;
+    top:calc(50% - 160px);
 }
-.squareanim .bgrhomb {
-      
-}
-
 .squareanim .bgrhomb {
 	transition: all 1s cubic-bezier(.8,-.5,.3,1.8);	
 }
@@ -1271,7 +1269,7 @@ section p{
 	padding-right: 10px;
 }
 .costusl div{
-	margin-top: 46px;
+	margin-bottom: 46px;
 }
 .leftgreyusl, .rightgreyusl{
 	background-color: #F8F8F8;
@@ -1336,6 +1334,7 @@ section p{
 	background-size: contain;
 	resize: none;
 	overflow: auto;
+    margin-bottom: 30px;
 }
 .forma textarea:focus{
 	outline: none;

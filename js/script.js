@@ -4,6 +4,7 @@ var menuH=0, hBegin=0, hEnd=0;
 var hNow=0, prewH=0;
 var offset1, offset2, offset3, offset4;
 var flWheel=false;
+var flagHtml=true;
 $( document ).ready(function() {
     var isOpen = false;
     function open(){
@@ -120,8 +121,7 @@ $( document ).ready(function() {
         }).scrollSpy();
         var modules=$(".modules .module .nummod");
         var lines=$(".whiteline, .greyline0, .greyline00, .greyline00copy");
-        function resize(){
-            for (i=0; i<modules.length; i++){
+        for (i=0; i<modules.length; i++){
                 if (i<9){
                     num="0";
                 }
@@ -131,6 +131,7 @@ $( document ).ready(function() {
                 num=num+(i+1)+"";
                 modules.eq(i).text(num);
             }
+        function resize(){           
             for (i=0; i<lines.length; i++){
                 parent=lines.eq(i).parent();
                 heightline=parent.parent().parent().offset().top+parent.parent().parent().innerHeight()-parent.offset().top-parent.innerHeight();
@@ -158,15 +159,20 @@ $( document ).ready(function() {
                 $(".number").attr("style", "");
             }
             if ($(window).outerWidth()<991){
-                $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
-            }
+                $("blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
+            }                 
         }
         resize();
         $(window).resize(function(){                
             resize();
         });
+        
+        if ($(window).outerWidth()<991){
+                $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
+            }
+        
         colors=$(".colors .color p");
-        circleColor=$(".colors .color .circleColor");
+        circleColor=$(".colors .color .circlecolor");
         for (i=0; i<colors.length; i++){
             circleColor.eq(i).css("background-color", colors.eq(i).text());
             if (colors.eq(i).text() =="#FFFFFF" || colors.eq(i).text() == "#ffffff")
@@ -174,7 +180,15 @@ $( document ).ready(function() {
         }
     }
     // index.html----------------------------------------------------------------------------------
-    if ($(".bgheader2").html()!=undefined){       
+    if ($(".bgheader2").html()!=undefined){
+         $(".foto").eq(0).addClass("activefoto");
+        infoFoto();
+        function infoFoto(){
+            $(".bigfoto").attr("style", $(".activefoto .smallfoto").attr("style"));
+            $(".name2").text($(".activefoto .name").text());
+            $(".doljnost2").text($(".activefoto .doljnost").text());
+            $(".opischlena2").text($(".activefoto .opischlena").text());
+        }
         allPortfolio=$(".portfolionone");
         resize2();
         function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
@@ -196,19 +210,13 @@ $( document ).ready(function() {
             $(".activevuborrab").removeClass("activevuborrab");
              $(this).addClass("activevuborrab");
          });
-        $(".foto").eq(0).addClass("activefoto");
-        infoFoto();
+        
         $(".foto").click(function(){
             $(".activefoto").removeClass("activefoto");
              $(this).addClass("activefoto");
              infoFoto();
         });
-        function infoFoto(){
-            $(".bigfoto").attr("style", $(".activefoto .smallfoto").attr("style"));
-            $(".name2").text($(".activefoto .name").text());
-            $(".doljnost2").text($(".activefoto .doljnost").text());
-            $(".opischlena2").text($(".activefoto .opischlena").text());
-        }
+        
         allNumRab=$(".nomerrabotaem");
         for (i=0; i<allNumRab.length; i++){
             if(i<9)
@@ -216,30 +224,7 @@ $( document ).ready(function() {
             else num="";
             num=num+(i+1)+"";
             allNumRab.eq(i).text(num);
-        }
-        allUslZagl=$(".uslugi h3");
-        allUsl=$(".uslugi .ul");
-        var arr = [];
-        function allTopGreyUsl(){
-            topGrey=0;
-            for (i=0; i<allUsl.length; i++){
-                $(arr[i]).css("height",  $(".uslugi .ul").eq(i).innerHeight()+$(".uslugi h3").eq(i).innerHeight());
-                //$(arr[i]).css("width",  $(window).width()/2);
-                $(arr[i]).css("top",  topGrey);
-                topGrey+=$(arr[i]).height();              
-            }
-        }
-        for (i=0; i<allUslZagl.length; i++){
-            if (i % 2 == 0){
-                allUsl.eq(i).append("<div class='leftgreyusl'></div>");
-                arr[i]=allUsl.eq(i).find(".leftgreyusl");
-            }
-            else{
-                allUsl.eq(i).append("<div class='rightgreyusl'></div>");
-                arr[i]=allUsl.eq(i).find(".rightgreyusl");
-            }
-        }
-        allTopGreyUsl();
+        }      
         $(".forma input[type=range]").on("input", cost);      
         function cost(){
             countItems = $("#cost").val();
@@ -279,10 +264,8 @@ $( document ).ready(function() {
         }
         if ($(".greyrec").html()!=undefined)
         {
-            console.log(-2);
             zamena(0);                        
             $(window).scroll(function(){  
-                console.log(-3);
                 hNow=Math.ceil($(window).scrollTop());
                 if(f2==1 && hNow<hEnd){
                     $(".portfolio").css("position", "fixed");
@@ -306,18 +289,12 @@ $( document ).ready(function() {
                      $(".portfolio").css("top", 0+"px");    
                      flag=0;
                 } 
-                console.log(hNow);
-                console.log(hBegin);
-                console.log(hEnd);
                 if (hNow>=hBegin && hNow<hEnd){
-                    console.log(-1);
                     if(prewH<hNow){                     
                         if(hNow>=offset1 && flag==-1){
-                            console.log(0);
                             flag=0;
                         }
                         else if (hNow>=offset1 && hNow<offset2 && flag==0){
-                            console.log(1);
                             flag=1;
                             $(".portfolio").addClass("prtnext");
                             zamena(1);                            
@@ -325,10 +302,8 @@ $( document ).ready(function() {
                         else if (hNow>=offset2 && flag==1){
                             flag=2;
                             $(".rhomb").addClass("circleanim");
-                            console.log(2);
                         }
                         else if (hNow>=offset2 && hNow<offset3 && flag==2){
-                            console.log(3);
                             flag=3;
                             $(".portfolio").addClass("prtnext");
                             zamena(2);
@@ -397,13 +372,13 @@ $( document ).ready(function() {
                 if (hNow<offset1){
                     scroll(offset1);                
                 }
-                else if (hNow>=offset1 && hNow<offset2 && flag==0){        
+                else if (hNow>=offset1 && hNow<offset2 && flag==0){
                     scroll(offset2);
                 }
                 else if (hNow>=offset2 && hNow<offset3 && (flag==2 || flag==1)){
                     scroll(offset3);
                 }
-                else if (hNow>=offset3 && hNow<offset4 && flag==3){
+                else if (hNow>=offset3 && hNow<offset4 && (flag==3 || flag==-1)){
                     scroll(offset4);                   
                 }
             }
@@ -452,7 +427,7 @@ $( document ).ready(function() {
                 }
                 else if(hNow>hEnd2 && ff2==0){
                     $(".flexbig").css("position", "absolute");
-                    topa=$(".flexkomanda").innerHeight()-$(".bigfoto").innerHeight();
+                    topa=$(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
                     $(".flexbig").css("top", topa +"px");    
                     $(".flexbig").css("left", leftbig-$(".flexkomanda").offset().left+"px");
                     ff2=1;            
@@ -462,19 +437,70 @@ $( document ).ready(function() {
                      $(".flexbig").attr("style", "");
                 } 
             });
-        }        
+        }
+        
+        var oldHtml;
+        
+        
+        
+               
         function resize2(){
+            var arr = [];
+            allUslZagl=$(".uslugi h3");
+        allUsl=$(".uslugi .ul");
+        
+        function allTopGreyUsl(){
+            topGrey=0;
+            for (i=0; i<allUsl.length; i++){
+                $(arr[i]).css("height",  $(".uslugi .ul").eq(i).innerHeight()+$(".uslugi h3").eq(i).innerHeight());
+                $(arr[i]).css("top",  topGrey);
+                topGrey+=$(arr[i]).height();              
+            }
+        }
+            
+        for (i=0; i<allUslZagl.length; i++){
+            if (i % 2 == 0){
+                allUsl.eq(i).append("<div class='leftgreyusl'></div>");
+                arr[i]=allUsl.eq(i).find(".leftgreyusl");
+            }
+            else{
+                allUsl.eq(i).append("<div class='rightgreyusl'></div>");
+                arr[i]=allUsl.eq(i).find(".rightgreyusl");
+            }
+        }
+        allTopGreyUsl();
+        
 			menuH=$(".menu").innerHeight();
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=Math.ceil($(".flexkomanda").offset().top-menuH);
             hEnd2=Math.ceil(hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight());
-            leftbig=$(".flexbig").offset().left;           
+            leftbig=$(".flexbig").offset().left;        
             hBegin=Math.ceil($(".block1").offset().top-menuH+$(".block1").innerHeight());
             hEnd=Math.ceil(allPortfolio.eq(allPortfolio.length-1).offset().top);
             offset1=Math.ceil(allPortfolio.eq(0).offset().top-menuH);
             offset2=Math.ceil(allPortfolio.eq(1).offset().top-menuH);
             offset3=Math.ceil(allPortfolio.eq(2).offset().top-menuH);
             offset4=Math.ceil($("#komanda").offset().top-menuH);
+
+            if ($(window).outerWidth()<=600 && flagHtml==true){
+                oldHtml=$(".uslugi").html();
+                zagolovki=$(".zaglflex");
+                 flagHtml=false;
+                for (i=0; i<zagolovki.length; i++){
+                    ulParent=zagolovki.eq(i).parent().parent().parent();
+                    allLi=ulParent.find("li:not(.usl ul li)");                                  
+                    flexStart=zagolovki.eq(i).find(".flexstart");
+                    for (j=0; j<flexStart.length; j++){
+                        strCost=".costusl:nth-child("+(j+2)+"):not(.flexstart)";
+                        allLi.find(strCost).prepend("<div>"+flexStart.eq(j).find("div").text()+"</div>");                        
+                    }
+                    allLi.find(".costusl").addClass("flexstart");
+                }
+            } 
+            else if ($(window).outerWidth()>600 && flagHtml==false){
+                $(".uslugi").html(oldHtml);
+                flagHtml=true;
+            }
         }       
         $(window).resize(function(){                
             resize2();

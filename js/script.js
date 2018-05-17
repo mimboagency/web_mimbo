@@ -1,3 +1,10 @@
+/**
+    * Флаг
+    *
+    * Флаг используемый при переключении слайдов
+    *
+    *@var int f
+    */    
 var f=0, f2=0, ff=0, ff2=0, prevh=0, flag=-1, ff=0, ff2=0;
 var hBegin2=0, hEnd2=0, leftbig=0;
 var menuH=0, hBegin=0, hEnd=0;
@@ -7,6 +14,12 @@ var flWheel=false;
 var flagHtml=true;
 $( document ).ready(function() {
     var isOpen = false;
+    /**
+        * Работа с меню
+        *
+        * Открывает закрытое меню.
+        * Закрывает октрытое меню.
+        */
     function open(){
         if(isOpen==false){
             isOpen=true;
@@ -37,6 +50,14 @@ $( document ).ready(function() {
             normalScrollElements: '.block4,.block5, .block6, .block7, .block8, .block9',
             fitToSection: false
         });
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInUp
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInUp');
@@ -44,6 +65,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2.5s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInDown
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation2(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInDown');
@@ -51,6 +80,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2.5s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInDownOP
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation3(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInDownOP');
@@ -58,6 +95,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию animate-text
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation4(obj,delay){
             obj.addClass('wow');
             obj.addClass('animate-text');
@@ -65,6 +110,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInUpNext
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation5(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInUpNext');
@@ -72,6 +125,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "1s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInUp
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation6(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInUp');
@@ -79,6 +140,14 @@ $( document ).ready(function() {
             obj.attr( "data-wow-duration", "2.8s" );
             obj.attr( "data-wow-delay",  delay + "s" );
         }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeIn
+        *
+        * @param object obj
+        * @param int delay
+        */
         function goAnimation7(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeIn');
@@ -122,15 +191,15 @@ $( document ).ready(function() {
         var modules=$(".modules .module .nummod");
         var lines=$(".whiteline, .greyline0, .greyline00, .greyline00copy");
         for (i=0; i<modules.length; i++){
-                if (i<9){
-                    num="0";
-                }
-                else {
-                    num="";
-                }
-                num=num+(i+1)+"";
-                modules.eq(i).text(num);
+            if (i<9){
+                num="0";
             }
+            else {
+                num="";
+            }
+            num=num+(i+1)+"";
+            modules.eq(i).text(num);
+        }
         function resize(){           
             for (i=0; i<lines.length; i++){
                 parent=lines.eq(i).parent();
@@ -168,8 +237,8 @@ $( document ).ready(function() {
         });
         
         if ($(window).outerWidth()<991){
-                $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
-            }
+            $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
+        }
         
         colors=$(".colors .color p");
         circleColor=$(".colors .color .circlecolor");
@@ -262,8 +331,7 @@ $( document ).ready(function() {
                 p++;
             },1);
         }
-        if ($(".greyrec").html()!=undefined)
-        {
+        if ($(".greyrec").html()!=undefined){
             zamena(0);                        
             $(window).scroll(function(){  
                 hNow=Math.ceil($(window).scrollTop());

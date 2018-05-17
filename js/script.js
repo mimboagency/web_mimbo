@@ -200,6 +200,11 @@ $( document ).ready(function() {
             num=num+(i+1)+"";
             modules.eq(i).text(num);
         }
+        /**
+            * Функция изменяет свойства страницы case 
+            *
+            * Функция вызывается при изменении размера окна
+            */        
         function resize(){           
             for (i=0; i<lines.length; i++){
                 parent=lines.eq(i).parent();
@@ -252,14 +257,29 @@ $( document ).ready(function() {
     if ($(".bgheader2").html()!=undefined){
          $(".foto").eq(0).addClass("activefoto");
         infoFoto();
+        /**
+            * Инициализация значений для сотрудников
+            *
+            * Подставляет значения при выборе сотрудника
+            */ 
         function infoFoto(){
             $(".bigfoto").attr("style", $(".activefoto .smallfoto").attr("style"));
             $(".name2").text($(".activefoto .name").text());
             $(".doljnost2").text($(".activefoto .doljnost").text());
             $(".opischlena2").text($(".activefoto .opischlena").text());
         }
-        allPortfolio=$(".portfolionone");
-        resize2();
+        allPortfolio=$(".portfolionone");      
+        /**
+            * Работа с анимацией
+            *
+            * Запускает анимацию указанную в параметре
+            *
+            * @param object object
+            * @param string animationName
+            * @param int animationOffset
+            * @param int animationDuration
+            * @param int animationDelay
+            */
         function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
             object.addClass('wow');
             object.addClass(animationName);
@@ -478,8 +498,7 @@ $( document ).ready(function() {
             });
         }
         // komanda---------------------------------------------------------------
-        if ($(".flexkomanda").html()!=undefined)
-        {           
+        if ($(".flexkomanda").html()!=undefined){           
             $(window).scroll(function(){         
                 if (ff2==1 && hNow<hEnd2){
                     $(".flexbig").css("position", "fixed");
@@ -508,15 +527,9 @@ $( document ).ready(function() {
         }
         
         var oldHtml;
-        
-        
-        
-               
-        function resize2(){
-            var arr = [];
-            allUslZagl=$(".uslugi h3");
-        allUsl=$(".uslugi .ul");
-        
+        var arr = [];
+        var allUslZagl=$(".uslugi h3");
+        var allUsl=$(".uslugi .ul"); 
         function allTopGreyUsl(){
             topGrey=0;
             for (i=0; i<allUsl.length; i++){
@@ -524,8 +537,7 @@ $( document ).ready(function() {
                 $(arr[i]).css("top",  topGrey);
                 topGrey+=$(arr[i]).height();              
             }
-        }
-            
+        }  
         for (i=0; i<allUslZagl.length; i++){
             if (i % 2 == 0){
                 allUsl.eq(i).append("<div class='leftgreyusl'></div>");
@@ -535,9 +547,10 @@ $( document ).ready(function() {
                 allUsl.eq(i).append("<div class='rightgreyusl'></div>");
                 arr[i]=allUsl.eq(i).find(".rightgreyusl");
             }
-        }
-        allTopGreyUsl();
+        }            
         
+        function resize2(){
+            allTopGreyUsl();       
 			menuH=$(".menu").innerHeight();
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=Math.ceil($(".flexkomanda").offset().top-menuH);
@@ -549,7 +562,6 @@ $( document ).ready(function() {
             offset2=Math.ceil(allPortfolio.eq(1).offset().top-menuH);
             offset3=Math.ceil(allPortfolio.eq(2).offset().top-menuH);
             offset4=Math.ceil($("#komanda").offset().top-menuH);
-
             if ($(window).outerWidth()<=600 && flagHtml==true){
                 oldHtml=$(".uslugi").html();
                 zagolovki=$(".zaglflex");
@@ -569,7 +581,8 @@ $( document ).ready(function() {
                 $(".uslugi").html(oldHtml);
                 flagHtml=true;
             }
-        }       
+        }   
+        resize2();   
         $(window).resize(function(){                
             resize2();
         });

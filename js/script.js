@@ -314,7 +314,12 @@ $( document ).ready(function() {
             num=num+(i+1)+"";
             allNumRab.eq(i).text(num);
         }      
-        $(".forma input[type=range]").on("input", cost);      
+        $(".forma input[type=range]").on("input", cost);
+        /**
+            * Управление стоимостью
+            *
+            * Записывает значение ползунка
+            */        
         function cost(){
             countItems = $("#cost").val();
             $(".costrange").text(countItems+ " руб");
@@ -328,6 +333,13 @@ $( document ).ready(function() {
         $(".rightagency a").click(function(){
             scrollAnimate(this);
         });
+        /**
+            * Анимация скролла
+            *
+            * Запускает анимацию скролла для обьекта 
+            *
+            * @param object object
+            */
         function scrollAnimate(object){
             $("html, body").animate({
                 scrollTop: $($(object).attr("href")).offset().top - $(".menu").innerHeight() + "px"
@@ -336,7 +348,14 @@ $( document ).ready(function() {
                  duration: 600,
                  easing: "swing"
             });
-        }
+        }   
+        /**
+            * Подставляет значение в слайд
+            *
+            * При пролистывании берет информацию из скрытого блока
+            *
+            * @param int i
+            */
         function zamena(i){
             p = 0;
             var interval = setInterval(function(){
@@ -352,7 +371,12 @@ $( document ).ready(function() {
             },1);
         }
         if ($(".greyrec").html()!=undefined){
-            zamena(0);                        
+            zamena(0); 
+        /**
+            * Отслеживание скролла
+            *
+            * Изменяет свойства элементов страницы при скролле
+            */            
             $(window).scroll(function(){  
                 hNow=Math.ceil($(window).scrollTop());
                 if(f2==1 && hNow<hEnd){
@@ -447,6 +471,13 @@ $( document ).ready(function() {
         var quietPeriod = 100; 
         var animationTime=500;
         var objAnim;
+        /**
+            * Перехват события колесика
+            *
+            * Перелистывание слайда
+            *
+            * @param event e
+            */
         function onWheel(e) {
             e = e || window.event;
             var timeNow = new Date().getTime();
@@ -487,10 +518,17 @@ $( document ).ready(function() {
             e.preventDefault ? e.preventDefault() : (e.returnValue = false);
         }     
         window.addEventListener("wheel", onWheel);
-        function scroll(numberscroll){
+        /**
+            * Анимация скролла
+            *
+            * Запускает анимацию скролла на заданное кол-во px
+            *
+            * @param int numberScroll
+            */       
+        function scroll(numberScroll){
             $(".portfolio").removeClass("prtnext");
             $("html, body").animate({
-                scrollTop: numberscroll + "px"
+                scrollTop: numberScroll + "px"
               }, 
               {
                  duration: 500,
@@ -498,7 +536,12 @@ $( document ).ready(function() {
             });
         }
         // komanda---------------------------------------------------------------
-        if ($(".flexkomanda").html()!=undefined){           
+        if ($(".flexkomanda").html()!=undefined){   
+        /**
+            * Эффект прилипания
+            *
+            * Эффект прилипания для сотрудников
+            */        
             $(window).scroll(function(){         
                 if (ff2==1 && hNow<hEnd2){
                     $(".flexbig").css("position", "fixed");
@@ -529,7 +572,12 @@ $( document ).ready(function() {
         var oldHtml;
         var arr = [];
         var allUslZagl=$(".uslugi h3");
-        var allUsl=$(".uslugi .ul"); 
+        var allUsl=$(".uslugi .ul");
+        /**
+            * Рассчет отступов и высоты
+            *
+            * Рассчет отступов и высоты для серых блоков прайс-листа  
+            */    
         function allTopGreyUsl(){
             topGrey=0;
             for (i=0; i<allUsl.length; i++){
@@ -548,7 +596,11 @@ $( document ).ready(function() {
                 arr[i]=allUsl.eq(i).find(".rightgreyusl");
             }
         }            
-        
+        /**
+            * Изменяет свойства страницы Index
+            *
+            * Изменяет свойства страницы при изминении размера окна
+            */     
         function resize2(){
             allTopGreyUsl();       
 			menuH=$(".menu").innerHeight();

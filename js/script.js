@@ -574,9 +574,9 @@ $( document ).ready(function() {
         var allUslZagl=$(".uslugi h3");
         var allUsl=$(".uslugi .ul");
         /**
-            * Рассчет отступов и высоты
+            * Расчет отступов и высоты
             *
-            * Рассчет отступов и высоты для серых блоков прайс-листа  
+            * Расчет отступов и высоты для серых блоков прайс-листа  
             */    
         function allTopGreyUsl(){
             topGrey=0;

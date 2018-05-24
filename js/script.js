@@ -1,19 +1,132 @@
 /**
-    * Флаг
+    * Флаги слайдов
     *
     * Флаг используемый при переключении слайдов
     *
-    *@var int f
+    *@var number f
+    *@var number f2
+    *@var number ff2
+    *@var number ff
+    *@var number flag
     */    
-var f=0, f2=0, ff=0, ff2=0, prevh=0, flag=-1, ff=0, ff2=0;
-var hBegin2=0, hEnd2=0, leftbig=0;
+var f=0, f2=0, ff=0, ff2=0, flag=-1;
+
+/**
+    * Начало эффекта прилипания слайда
+    *
+    * Храним  высчитанное начало, при котором  
+    * слайд прилипает к экрану
+    *
+    *@var number hBegin
+    */  
+    
+/**
+    * Конец эффекта прилипания слайда
+    *
+    * Храним  высчитанный конец, при котором  
+    * слайд отлипает от экрана
+    *
+    *@var number hEnd
+    */  
+    
+/**
+    * Высоста меню
+    *
+    * Храним  высчитанную высоту меню
+    *
+    *@var number menuH
+    */  
 var menuH=0, hBegin=0, hEnd=0;
+
+/**
+    * Начало эффекта прилипания для сотрудников
+    *
+    * Храним  высчитанное начало, при котором  
+    * блок с фото и описанием сотрудника
+    * прилипает к экрану
+    *
+    *@var number hBegin2
+    */  
+    
+/**
+    * Конец эффекта прилипания слайда
+    *
+    * Храним  высчитанный конец, при котором  
+    * блок с фото и описанием сотрудника
+    * отлипает от экрана
+    *
+    *@var number hEnd2
+    */  
+    
+/**
+    * Отступ слева для блока с описанием
+    *
+    * Храним  отступ слева блока с фото 
+    * и описанием сотрудника
+    *
+    *@var number leftBig
+    */
+var hBegin2=0, hEnd2=0, leftBig=0;
+
+/**
+    * Новое положение скролла
+    *
+    * Храним  текущее положение скролла
+    *
+    *@var number hNow
+    */
+    
+/**
+    * Положение скролла
+    *
+    * Храним  предыдущее положение скролла
+    *
+    *@var number prewH
+    */
 var hNow=0, prewH=0;
+
+/**
+    * Отступ первых четырех разделов 
+    *
+    * Отступ от начала первых четырех разделов 
+    * страницы index
+    *
+    *@var number offset1
+    *@var number offset2
+    *@var number offset3
+    *@var number offset4
+    */
 var offset1, offset2, offset3, offset4;
-var flWheel=false;
-var flagHtml=true;
+
+/**
+    * Флаг скролла
+    *
+    * Флаг перехвата скролла колесиком
+    *
+    *@var boolean flWheel
+    */
+    
+/**
+    * Флаг о замене html
+    *
+    * Флаг, показывающий надо ли
+    * заменять html  в блоке с ценами
+    *
+    *@var boolean flagHtml
+    */
+var flWheel=false, flagHtml=true;
 $( document ).ready(function() {
+    
+    /**
+        * Флаг меню
+        *
+        * Флаг показывает что меню
+        * открытое или  закрытое
+        *
+        *@var boolean isOpen
+        */
     var isOpen = false;
+    
     /**
         * Работа с меню
         *
@@ -56,7 +169,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeInUp
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation(obj,delay){
             obj.addClass('wow');
@@ -71,7 +184,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeInDown
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation2(obj,delay){
             obj.addClass('wow');
@@ -86,7 +199,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeInDownOP
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation3(obj,delay){
             obj.addClass('wow');
@@ -101,7 +214,7 @@ $( document ).ready(function() {
         * Запускает анимацию animate-text
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation4(obj,delay){
             obj.addClass('wow');
@@ -116,7 +229,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeInUpNext
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation5(obj,delay){
             obj.addClass('wow');
@@ -131,7 +244,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeInUp
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation6(obj,delay){
             obj.addClass('wow');
@@ -146,7 +259,7 @@ $( document ).ready(function() {
         * Запускает анимацию fadeIn
         *
         * @param object obj
-        * @param int delay
+        * @param number delay
         */
         function goAnimation7(obj,delay){
             obj.addClass('wow');
@@ -276,9 +389,9 @@ $( document ).ready(function() {
             *
             * @param object object
             * @param string animationName
-            * @param int animationOffset
-            * @param int animationDuration
-            * @param int animationDelay
+            * @param number animationOffset
+            * @param number animationDuration
+            * @param number animationDelay
             */
         function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
             object.addClass('wow');
@@ -354,7 +467,7 @@ $( document ).ready(function() {
             *
             * При пролистывании берет информацию из скрытого блока
             *
-            * @param int i
+            * @param number i
             */
         function zamena(i){
             p = 0;
@@ -523,7 +636,7 @@ $( document ).ready(function() {
             *
             * Запускает анимацию скролла на заданное кол-во px
             *
-            * @param int numberScroll
+            * @param number numberScroll
             */       
         function scroll(numberScroll){
             $(".portfolio").removeClass("prtnext");
@@ -546,20 +659,20 @@ $( document ).ready(function() {
                 if (ff2==1 && hNow<hEnd2){
                     $(".flexbig").css("position", "fixed");
                     $(".flexbig").css("top", menuH+"px");
-                    $(".flexbig").css("left", leftbig+"px");
+                    $(".flexbig").css("left", leftBig+"px");
                     ff2=0;
                  }
                 if (ff==0 && hNow>=hBegin2 && hNow<hEnd2){        
                     $(".flexbig").css("position", "fixed");
                     $(".flexbig").css("top", menuH+"px");
-                    $(".flexbig").css("left", leftbig+"px");                    
+                    $(".flexbig").css("left", leftBig+"px");                    
                     ff=1;
                 }
                 else if(hNow>hEnd2 && ff2==0){
                     $(".flexbig").css("position", "absolute");
                     topa=$(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
                     $(".flexbig").css("top", topa +"px");    
-                    $(".flexbig").css("left", leftbig-$(".flexkomanda").offset().left+"px");
+                    $(".flexbig").css("left", leftBig-$(".flexkomanda").offset().left+"px");
                     ff2=1;            
                 }
                 else if(hNow<hBegin2 && ff==1){
@@ -607,7 +720,7 @@ $( document ).ready(function() {
 			$(".portfolionone").css("height", $(".portfolio").innerHeight());
             hBegin2=Math.ceil($(".flexkomanda").offset().top-menuH);
             hEnd2=Math.ceil(hBegin2 + $(".flexkomanda").innerHeight()-$(".flexbig").innerHeight());
-            leftbig=$(".flexbig").offset().left;        
+            leftBig=$(".flexbig").offset().left;        
             hBegin=Math.ceil($(".block1").offset().top-menuH+$(".block1").innerHeight());
             hEnd=Math.ceil(allPortfolio.eq(allPortfolio.length-1).offset().top);
             offset1=Math.ceil(allPortfolio.eq(0).offset().top-menuH);

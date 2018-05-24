@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>Описание сайта Mimbo</title>
+    </info>
+    <sect1>
+        <title>Описание продукта</title>
+        <para>Mimbo — интернет-агентство по разработке сайтов и фирменного стиля.
+За 3 года наши веб-разработчики, дизайнеры и маркетологи реализовали более 50 проектов: от небольших сайтов-визиток, до комплексных интернет-магазинов.
+Мы донесем суть и главные идеи вашего бизнеса!</para>
+        <para>Данный сайт является обновлением, которое собрало в себя новые технологии html, css и js.
+        Это позволило сделать сайт с продвинутым дизайном и функционалом.</para>
+        <table frame="all">
+            <title>Функиональность:</title>
+            <tgroup cols="2">
+                <tbody>
+                    <row>
+                        <entry>Слайдер портфолио на главной странице</entry>
+                        <entry>Данный слайдер позволяет осуществить необычное перемещение по сайту с помощью анимации.
+                        Анимация преобразовывает одну фигуру в другую, а текст плавно меняется, что дает "вау-эффект".</entry>
+                    </row>
+                    <row>
+                        <entry>Sticky для сотрудников</entry>
+                        <entry>Позиционирование относительно в пределах своего родителя, пока данное смещение порогового значения в окне просмотра.</entry>
+                    </row>
+                    <row>
+                        <entry>Адаптивная верстка</entry>
+                        <entry>Все страницы продукта были адаптированы под просмотр со всех возможных устройств.</entry>
+                    </row>
+                    <row>
+                        <entry>Анимации</entry>
+                        <entry>Отдельного внимания заслуживают анимации сайта.
+                        На каждой странице проработано плавное появление текста, картинок и плавный переход по разделам сайта, и др.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </sect1>
+    <sect1>
+        <title>Реализация и скриншоты работы</title>
+        <para>Вся логика продукта реализована в файле
+                <filename>script.js</filename>, а также использовались библиотеки <filename>scrollspy.js</filename>, <filename>wow.js</filename> и
+                <filename>jquery-3.1.1.min.js</filename>.</para>
+        <para>Далее представлен код слайдера портфолио на главной странице:
+        <programlisting>function zamena(i){
+            p = 0;
+            var interval = setInterval(function(){
+                if($(".leftrab h2").css("opacity") == "0" || p&gt;=600){
+                    clearInterval(interval);
+                    $(".portfolio .leftrab h2").text($(".portfolionone h2").eq(i).text());
+                    $(".portfolio .leftrab p").text($(".portfolionone p").eq(i).text());
+                    $(".portfolio .leftrab .btnsmotr").attr("href",$(".portfolionone .btnsmotr").eq(i).attr("href"));
+                    $(".portfolio .bgrhomb").attr("style", $(".portfolionone .bgrhomb").eq(i).attr("style"));
+                    $(".portfolio .numberrab").text("0"+(i+1));
+                }
+                p++;
+            },1);
+        }
+        if ($(".greyrec").html()!=undefined){
+            zamena(0);
+        /**
+            * Отслеживание скролла
+            *
+            * Изменяет свойства элементов страницы при скролле
+            */
+            $(window).scroll(function(){
+                hNow=Math.ceil($(window).scrollTop());
+                if(f2==1 || hNow hEnd){
+                    $(".portfolio").css("position", "fixed");
+                    $(".portfolio").css("top", menuH+"px");
+                    f2=0;
+                 }
+                if(f==0 || hNow&gt;=hBegin || hNow hEnd){
+                        $(".portfolio").css("position", "fixed");
+                        $(".portfolio").css("top", menuH+"px");
+                        f=1;
+                }
+                else if(hNow&gt;hEnd || f2==0){
+                    $(".portfolio").css("position", "absolute");
+                    topa=allPortfolio.eq(0).innerHeight()*(allPortfolio.length-1);
+                    $(".portfolio").css("top", topa +"px");
+                    f2=1;
+                }
+                else if(hNow hBegin || f==1){
+                     f=0;
+                     $(".portfolio").css("position", "absolute");
+                     $(".portfolio").css("top", 0+"px");
+                     flag=0;
+                }
+                if (hNow&gt;=hBegin || hNow hEnd){
+                    if(prewH hNow){
+                        if(hNow&gt;=offset1 || flag==-1){
+                            flag=0;
+                        }
+                        else if (hNow&gt;=offset1 || hNow offset2 || flag==0){
+                            flag=1;
+                            $(".portfolio").addClass("prtnext");
+                            zamena(1);
+                        }
+                        else if (hNow&gt;=offset2 || flag==1){
+                            flag=2;
+                            $(".rhomb").addClass("circleanim");
+                        }
+                        else if (hNow&gt;=offset2 || hNow offset3 || flag==2){
+                            flag=3;
+                            $(".portfolio").addClass("prtnext");
+                            zamena(2);
+                            $(".rhomb").addClass("squareanim");
+                         }
+                     }
+                     else{
+                         if (hNow =offset3 || flag==4){
+                            flag=3;
+                        }
+                        else if (hNow&gt;offset2 || hNow =offset3 || flag==3){
+                            flag=2;
+                            $(".portfolio").addClass("prtnext");
+                            zamena(1);
+                            $(".rhomb").addClass("circleanim");
+                            $(".rhomb").removeClass("squareanim");
+                        }
+                        else if (hNow =offset2 || flag==2){
+                            flag=1;
+                        }
+                        else if (hNow&gt;offset1 || hNow =offset2 || flag==1){
+                            flag=0;
+                            $(".rhomb").removeClass("circleanim");
+                            $(".portfolio").addClass("prtnext");
+                            zamena(0);
+                        }
+                    }
+                }
+                prewH=hNow;
+                if (hNow offset1){
+                    flag=-1;
+					zamena(0);
+                    $(".rhomb").removeClass("circleanim");
+                    $(".rhomb").removeClass("squareanim");
+                    $(".portfolio").addClass("prtnext");
+                }
+                if (hNow&gt;=offset4 || flWheel==false){
+                    zamena(2);
+                    flag=4;
+                    $(".rhomb").addClass("circleanim");
+                    $(".rhomb").addClass("squareanim");
+                    $(".portfolio").addClass("prtnext");
+                    window.removeEventListener("wheel", onWheel);
+                    flWheel=true;
+                }
+                else if (hNow&gt;offset3 || hNow offset4 || flWheel==true){
+                    window.addEventListener("wheel", onWheel);
+                    flWheel=false;
+                }
+            });
+        }
+        var lastAnimation = new Date().getTime();
+        var quietPeriod = 100;
+        var animationTime=500;
+        var objAnim;
+        /**
+            * Перехват события колесика
+            *
+            * Перелистывание слайда
+            *
+            * @param event e
+            */
+        function onWheel(e) {
+            e = e || window.event;
+            var timeNow = new Date().getTime();
+            if(timeNow - lastAnimation quietPeriod + animationTime) {
+                    e.preventDefault();
+                    return;
+            }
+            lastAnimation=timeNow;
+            var delta = e.deltaY || e.detail || e.wheelDelta;
+            if (delta&gt;0){
+                if (hNow offset1){
+                    scroll(offset1);
+                }
+                else if (hNow&gt;=offset1 || hNow offset2 || flag==0){
+                    scroll(offset2);
+                }
+                else if (hNow&gt;=offset2 || hNow offset3 || (flag==2 || flag==1)){
+                    scroll(offset3);
+                }
+                else if (hNow&gt;=offset3 || hNow offset4 || (flag==3 || flag==-1)){
+                    scroll(offset4);
+                }
+            }
+            else{
+                if (hNow&gt;offset3 || hNow =offset4 || flag==4){
+                    scroll(offset3);
+                }
+                else if (hNow&gt;offset2 || hNow =offset3 || flag==3){
+                    scroll(offset2);
+                }
+                else if (hNow&gt;offset1 || hNow =offset2 || (flag==2 || flag==1)){
+                    scroll(offset1);
+                }
+                else if (hNow =offset1){
+                    scroll(0);
+                }
+            }
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+        }
+        window.addEventListener("wheel", onWheel);
+        /**
+            * Анимация скролла
+            *
+            * Запускает анимацию скролла на заданное кол-во px
+            *
+            * @param number numberScroll
+            */
+        function scroll(numberScroll){
+            $(".portfolio").removeClass("prtnext");
+            $("html, body").animate({
+                scrollTop: numberScroll + "px"
+              },
+              {
+                 duration: 500,
+                 easing: "swing"
+            });
+        }
+        </programlisting></para>
+        <para>Sticky для сотрудников
+        <programlisting>
+        if ($(".flexkomanda").html()!=undefined){
+        /**
+            * Эффект прилипания
+            *
+            * Эффект прилипания для сотрудников
+            */
+            $(window).scroll(function(){
+                if (ff2==1 || hNow hEnd2){
+                    $(".flexbig").css("position", "fixed");
+                    $(".flexbig").css("top", menuH+"px");
+                    $(".flexbig").css("left", leftBig+"px");
+                    ff2=0;
+                 }
+                if (ff==0 || hNow&gt;=hBegin2 || hNow hEnd2){
+                    $(".flexbig").css("position", "fixed");
+                    $(".flexbig").css("top", menuH+"px");
+                    $(".flexbig").css("left", leftBig+"px");
+                    ff=1;
+                }
+                else if(hNow&gt;hEnd2 || ff2==0){
+                    $(".flexbig").css("position", "absolute");
+                    topa=$(".flexkomanda").innerHeight()-$(".flexbig").innerHeight();
+                    $(".flexbig").css("top", topa +"px");
+                    $(".flexbig").css("left", leftBig-$(".flexkomanda").offset().left+"px");
+                    ff2=1;
+                }
+                else if(hNow hBegin2 || ff==1){
+                     ff=0;
+                     $(".flexbig").attr("style", "");
+                }
+            });
+        }
+        </programlisting></para>
+        <para>Анимации<programlisting>
+         /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInUp
+        *
+        * @param object obj
+        * @param number delay
+        */
+        function goAnimation(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInUp');
+            obj.attr( "data-wow-offset", 150 );
+            obj.attr( "data-wow-duration", "2.5s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInDown
+        *
+        * @param object obj
+        * @param number delay
+        */
+        function goAnimation2(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInDown');
+            obj.attr( "data-wow-offset", 150 );
+            obj.attr( "data-wow-duration", "2.5s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+        /**
+        * Работа с анимацией
+        *
+        * Запускает анимацию fadeInDownOP
+        *
+        * @param object obj
+        * @param number delay
+        */
+        function goAnimation3(obj,delay){
+            obj.addClass('wow');
+            obj.addClass('fadeInDownOP');
+            obj.attr( "data-wow-offset", 150 );
+            obj.attr( "data-wow-duration", "2s" );
+            obj.attr( "data-wow-delay",  delay + "s" );
+        }
+            </programlisting></para>
+        <para>Ниже представлен скриншот первого экрана страницы <filename>index.html</filename>. <inlinemediaobject>
+                <imageobject>
+                    <imagedata fileref="main.png" width="500"/>
+                </imageobject>
+            </inlinemediaobject></para>
+        <para>Далее представлен скриншот слайдера портфолио. <inlinemediaobject>
+                <imageobject>
+                    <imagedata fileref="2.png" width="500"/>
+                </imageobject>
+            </inlinemediaobject></para>
+    </sect1>
+    <sect1>
+        <title>Выводы</title>
+        <para> В течение месяца был разработан сайт агенства «Mimbo» с использованием JavaScript, CSS, HTML. Сайт получился адаптивным, интуитивно понятным и универсальным.</para>
+    </sect1>
+</article>
+

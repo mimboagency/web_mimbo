@@ -1,138 +1,131 @@
 /**
-    * Флаги слайдов
-    *
-    * Флаг используемый при переключении слайдов
-    *
-    *@var number f
-    *@var number f2
-    *@var number ff2
-    *@var number ff
-    *@var number flag
-    */    
+  * Флаги слайдов
+  *
+  * Флаг используемый при переключении слайдов
+  *
+  *@var number f
+  *@var number f2
+  *@var number ff2
+  *@var number ff
+  *@var number flag
+  */    
 var f=0, f2=0, ff=0, ff2=0, flag=-1;
-
 /**
-    * Начало эффекта прилипания слайда
-    *
-    * Храним  высчитанное начало, при котором  
-    * слайд прилипает к экрану
-    *
-    *@var number hBegin
-    */  
-    
+  * Начало эффекта прилипания слайда
+  *
+  * Храним  высчитанное начало, при котором  
+  * слайд прилипает к экрану
+  *
+  *@var number hBegin
+  */  
+var hBegin=0;    
 /**
-    * Конец эффекта прилипания слайда
-    *
-    * Храним  высчитанный конец, при котором  
-    * слайд отлипает от экрана
-    *
-    *@var number hEnd
-    */  
-    
+  * Конец эффекта прилипания слайда
+  *
+  * Храним  высчитанный конец, при котором  
+  * слайд отлипает от экрана
+  *
+  *@var number hEnd
+  */  
+var hEnd=0;     
 /**
-    * Высоста меню
-    *
-    * Храним  высчитанную высоту меню
-    *
-    *@var number menuH
-    */  
-var menuH=0, hBegin=0, hEnd=0;
-
+  * Высоста меню
+  *
+  * Храним  высчитанную высоту меню
+  *
+  *@var number menuH
+  */  
+var menuH=0;
 /**
-    * Начало эффекта прилипания для сотрудников
-    *
-    * Храним  высчитанное начало, при котором  
-    * блок с фото и описанием сотрудника
-    * прилипает к экрану
-    *
-    *@var number hBegin2
-    */  
-    
+  * Начало эффекта прилипания для сотрудников
+  *
+  * Храним  высчитанное начало, при котором  
+  * блок с фото и описанием сотрудника
+  * прилипает к экрану
+  *
+  *@var number hBegin2
+  */  
+var hBegin2=0;    
 /**
-    * Конец эффекта прилипания слайда
-    *
-    * Храним  высчитанный конец, при котором  
-    * блок с фото и описанием сотрудника
-    * отлипает от экрана
-    *
-    *@var number hEnd2
-    */  
-    
+  * Конец эффекта прилипания слайда
+  *
+  * Храним  высчитанный конец, при котором  
+  * блок с фото и описанием сотрудника
+  * отлипает от экрана
+  *
+  *@var number hEnd2
+  */  
+var hEnd2=0; 
 /**
-    * Отступ слева для блока с описанием
-    *
-    * Храним  отступ слева блока с фото 
-    * и описанием сотрудника
-    *
-    *@var number leftBig
-    */
-var hBegin2=0, hEnd2=0, leftBig=0;
-
+  * Отступ слева для блока с описанием
+  *
+  * Храним  отступ слева блока с фото 
+  * и описанием сотрудника
+  *
+  *@var number leftBig
+  */
+var leftBig=0;
 /**
-    * Новое положение скролла
-    *
-    * Храним  текущее положение скролла
-    *
-    *@var number hNow
-    */
-    
+  * Новое положение скролла
+  *
+  * Храним  текущее положение скролла
+  *
+  *@var number hNow
+  */
+var hNow=0;    
 /**
-    * Положение скролла
-    *
-    * Храним  предыдущее положение скролла
-    *
-    *@var number prewH
-    */
-var hNow=0, prewH=0;
-
+  * Положение скролла
+  *
+  * Храним  предыдущее положение скролла
+  *
+  *@var number prewH
+  */
+var prewH=0;
 /**
-    * Отступ первых четырех разделов 
-    *
-    * Отступ от начала первых четырех разделов 
-    * страницы index
-    *
-    *@var number offset1
-    *@var number offset2
-    *@var number offset3
-    *@var number offset4
-    */
+  * Отступ первых четырех разделов 
+  *
+  * Отступ от начала первых четырех разделов 
+  * страницы index
+  *
+  *@var number offset1
+  *@var number offset2
+  *@var number offset3
+  *@var number offset4
+  */
 var offset1, offset2, offset3, offset4;
-
 /**
-    * Флаг скролла
-    *
-    * Флаг перехвата скролла колесиком
-    *
-    *@var boolean flWheel
-    */
-    
+  * Флаг скролла
+  *
+  * Флаг перехвата скролла колесиком
+  *
+  *@var boolean flWheel
+  */
+var flWheel=false;    
 /**
-    * Флаг о замене html
-    *
-    * Флаг, показывающий надо ли
-    * заменять html  в блоке с ценами
-    *
-    *@var boolean flagHtml
-    */
-var flWheel=false, flagHtml=true;
-$( document ).ready(function() {
-    
+  * Флаг о замене html
+  *
+  * Флаг, показывающий надо ли
+  * заменять html  в блоке с ценами
+  *
+  *@var boolean flagHtml
+  */
+var flagHtml=true;
+$( document ).ready(function() {   
     /**
-        * Флаг меню
-        *
-        * Флаг показывает что меню
-        * открытое или  закрытое
-        *
-        *@var boolean isOpen
-        */
-    var isOpen = false;
-    
+      * Флаг меню
+      *
+      * Флаг показывает что меню
+      * открытое или  закрытое
+      *
+      *@var boolean isOpen
+      */
+    var isOpen = false;    
     /**
-        * Работа с меню
-        *
-        * Открывает закрытое меню.
-        * Закрывает октрытое меню.
-        */
+      * Работа с меню
+      *
+      * Открывает закрытое меню.
+      * Закрывает октрытое меню.
+      */
     function open(){
         if(isOpen==false){
             isOpen=true;
@@ -153,6 +146,21 @@ $( document ).ready(function() {
         open();
         scrollAnimate(this);
     });
+    /**
+      * Работа с анимацией
+      *
+      * Запускает анимацию fadeInUp
+      *
+      * @param object obj
+      * @param number delay
+      */
+    function goAnimation(obj,delay){
+        obj.addClass('wow');
+        obj.addClass('fadeInUp');
+        obj.attr( "data-wow-offset", 150 );
+        obj.attr( "data-wow-duration", "2.5s" );
+        obj.attr( "data-wow-delay",  delay + "s" );
+    }
     if ($(".block2").html()!=undefined){
         $('body').fullpage({
             scrollBar: true,
@@ -164,28 +172,13 @@ $( document ).ready(function() {
             fitToSection: false
         });
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeInUp
-        *
-        * @param object obj
-        * @param number delay
-        */
-        function goAnimation(obj,delay){
-            obj.addClass('wow');
-            obj.addClass('fadeInUp');
-            obj.attr( "data-wow-offset", 150 );
-            obj.attr( "data-wow-duration", "2.5s" );
-            obj.attr( "data-wow-delay",  delay + "s" );
-        }
-        /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeInDown
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию fadeInDown
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation2(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInDown');
@@ -194,13 +187,13 @@ $( document ).ready(function() {
             obj.attr( "data-wow-delay",  delay + "s" );
         }
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeInDownOP
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию fadeInDownOP
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation3(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInDownOP');
@@ -209,13 +202,13 @@ $( document ).ready(function() {
             obj.attr( "data-wow-delay",  delay + "s" );
         }
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию animate-text
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию animate-text
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation4(obj,delay){
             obj.addClass('wow');
             obj.addClass('animate-text');
@@ -224,13 +217,13 @@ $( document ).ready(function() {
             obj.attr( "data-wow-delay",  delay + "s" );
         }
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeInUpNext
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию fadeInUpNext
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation5(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInUpNext');
@@ -239,13 +232,13 @@ $( document ).ready(function() {
             obj.attr( "data-wow-delay",  delay + "s" );
         }
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeInUp
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию fadeInUp
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation6(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeInUp');
@@ -254,13 +247,13 @@ $( document ).ready(function() {
             obj.attr( "data-wow-delay",  delay + "s" );
         }
         /**
-        * Работа с анимацией
-        *
-        * Запускает анимацию fadeIn
-        *
-        * @param object obj
-        * @param number delay
-        */
+          * Работа с анимацией
+          *
+          * Запускает анимацию fadeIn
+          *
+          * @param object obj
+          * @param number delay
+          */
         function goAnimation7(obj,delay){
             obj.addClass('wow');
             obj.addClass('fadeIn');
@@ -301,7 +294,23 @@ $( document ).ready(function() {
             }).removeClass('animated');
             wow.addBox(this);
         }).scrollSpy();
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object modules
+          */
         var modules=$(".modules .module .nummod");
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object lines
+          */
         var lines=$(".whiteline, .greyline0, .greyline00, .greyline00copy");
         for (i=0; i<modules.length; i++){
             if (i<9){
@@ -314,10 +323,10 @@ $( document ).ready(function() {
             modules.eq(i).text(num);
         }
         /**
-            * Функция изменяет свойства страницы case 
-            *
-            * Функция вызывается при изменении размера окна
-            */        
+          * Функция изменяет свойства страницы case 
+          *
+          * Функция вызывается при изменении размера окна
+          */        
         function resize(){           
             for (i=0; i<lines.length; i++){
                 parent=lines.eq(i).parent();
@@ -357,8 +366,23 @@ $( document ).ready(function() {
         if ($(window).outerWidth()<991){
             $(".blocks1, .block2, .block3, .block4, .fp-tableCell").attr("style", "");
         }
-        
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object colors
+          */
         colors=$(".colors .color p");
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object circleColor
+          */
         circleColor=$(".colors .color .circlecolor");
         for (i=0; i<colors.length; i++){
             circleColor.eq(i).css("background-color", colors.eq(i).text());
@@ -366,41 +390,118 @@ $( document ).ready(function() {
                 circleColor.eq(i).css("box-shadow", "0px 6px 10px 5px rgba(0, 0, 0, 0.05)");
         }
     }
+    /**
+      * Инициализация значений для сотрудников
+      *
+      * Подставляет значения при выборе сотрудника
+      */ 
+    function infoFoto(){
+        $(".bigfoto").attr("style", $(".activefoto .smallfoto").attr("style"));
+        $(".name2").text($(".activefoto .name").text());
+        $(".doljnost2").text($(".activefoto .doljnost").text());
+        $(".opischlena2").text($(".activefoto .opischlena").text());
+    }
     // index.html----------------------------------------------------------------------------------
+    /**
+      * Работа с анимацией
+      *
+      * Запускает анимацию указанную в параметре
+      *
+      * @param object object
+      * @param string animationName
+      * @param number animationOffset
+      * @param number animationDuration
+      * @param number animationDelay
+      */
+    function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
+        object.addClass('wow');
+        object.addClass(animationName);
+        object.attr( "data-wow-offset", animationOffset );
+        object.attr( "data-wow-duration", animationDuration + "s" );
+        object.attr( "data-wow-delay",  animationDelay + "s" );
+    } 
+    /**
+      * Управление стоимостью
+      *
+      * Записывает значение ползунка
+      */        
+    function cost(){
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var number countItems
+          */
+        countItems = $("#cost").val();
+        $(".costrange").text(countItems+ " руб");
+    }     
+    /**
+      * Анимация скролла
+      *
+      * Запускает анимацию скролла для обьекта 
+      *
+      * @param object object
+      */
+    function scrollAnimate(object){
+        $("html, body").animate({
+            scrollTop: $($(object).attr("href")).offset().top - $(".menu").innerHeight() + "px"
+        }, 
+        {
+            duration: 600,
+            easing: "swing"
+        });
+    }
+    /**
+      * Подставляет значение в слайд
+      *
+      * При пролистывании берет информацию из скрытого блока
+      *
+      * @param number i
+      */
+    function zamena(i){
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var number p
+          */
+        p = 0;
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object interval
+          */
+        var interval = setInterval(function(){
+            if($(".leftrab h2").css("opacity") == "0" || p>=600){
+                clearInterval(interval);
+                $(".portfolio .leftrab h2").text($(".portfolionone h2").eq(i).text());
+                $(".portfolio .leftrab p").text($(".portfolionone p").eq(i).text());
+                $(".portfolio .leftrab .btnsmotr").attr("href",$(".portfolionone .btnsmotr").eq(i).attr("href"));
+                $(".portfolio .bgrhomb").attr("style", $(".portfolionone .bgrhomb").eq(i).attr("style"));
+                $(".portfolio .numberrab").text("0"+(i+1));
+            }
+            p++;
+        },1);
+    }
     if ($(".bgheader2").html()!=undefined){
-         $(".foto").eq(0).addClass("activefoto");
+        $(".foto").eq(0).addClass("activefoto");
         infoFoto();
         /**
-            * Инициализация значений для сотрудников
-            *
-            * Подставляет значения при выборе сотрудника
-            */ 
-        function infoFoto(){
-            $(".bigfoto").attr("style", $(".activefoto .smallfoto").attr("style"));
-            $(".name2").text($(".activefoto .name").text());
-            $(".doljnost2").text($(".activefoto .doljnost").text());
-            $(".opischlena2").text($(".activefoto .opischlena").text());
-        }
-        allPortfolio=$(".portfolionone");      
-        /**
-            * Работа с анимацией
-            *
-            * Запускает анимацию указанную в параметре
-            *
-            * @param object object
-            * @param string animationName
-            * @param number animationOffset
-            * @param number animationDuration
-            * @param number animationDelay
-            */
-        function bestAnimation(object, animationName, animationOffset, animationDuration, animationDelay){
-            object.addClass('wow');
-            object.addClass(animationName);
-            object.attr( "data-wow-offset", animationOffset );
-            object.attr( "data-wow-duration", animationDuration + "s" );
-            object.attr( "data-wow-delay",  animationDelay + "s" );
-        }    
-        //bestAnimation($('.bgheader2'),"scaleHeader",0,1,0);
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object allPortfolio
+          */
+        allPortfolio=$(".portfolionone");                
         bestAnimation($('.bgheader2 h1'),"fadeIn",0,1,0);
         bestAnimation($('.bgheader2 li'),"fadeIn",0,1,0.3);
         bestAnimation($('.bgheader2 li').last(),"fadeIn",0,1,0.7);
@@ -412,13 +513,19 @@ $( document ).ready(function() {
             $(".activevuborrab").removeClass("activevuborrab");
              $(this).addClass("activevuborrab");
          });
-        
         $(".foto").click(function(){
             $(".activefoto").removeClass("activefoto");
              $(this).addClass("activefoto");
              infoFoto();
         });
-        
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object allNumRab
+          */        
         allNumRab=$(".nomerrabotaem");
         for (i=0; i<allNumRab.length; i++){
             if(i<9)
@@ -429,15 +536,22 @@ $( document ).ready(function() {
         }      
         $(".forma input[type=range]").on("input", cost);
         /**
-            * Управление стоимостью
-            *
-            * Записывает значение ползунка
-            */        
-        function cost(){
-            countItems = $("#cost").val();
-            $(".costrange").text(countItems+ " руб");
-        }
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object allSsulki
+          */ 
         allSsulki=$(".ssulki a");
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var number opacitySsulka
+          */
         opacitySsulka=1;
         for (i=0; i<allSsulki.length; i++){
             allSsulki.eq(i).css("opacity", opacitySsulka);
@@ -445,51 +559,14 @@ $( document ).ready(function() {
         }
         $(".rightagency a").click(function(){
             scrollAnimate(this);
-        });
-        /**
-            * Анимация скролла
-            *
-            * Запускает анимацию скролла для обьекта 
-            *
-            * @param object object
-            */
-        function scrollAnimate(object){
-            $("html, body").animate({
-                scrollTop: $($(object).attr("href")).offset().top - $(".menu").innerHeight() + "px"
-              }, 
-              {
-                 duration: 600,
-                 easing: "swing"
-            });
-        }   
-        /**
-            * Подставляет значение в слайд
-            *
-            * При пролистывании берет информацию из скрытого блока
-            *
-            * @param number i
-            */
-        function zamena(i){
-            p = 0;
-            var interval = setInterval(function(){
-                if($(".leftrab h2").css("opacity") == "0" || p>=600){
-                    clearInterval(interval);
-                    $(".portfolio .leftrab h2").text($(".portfolionone h2").eq(i).text());
-                    $(".portfolio .leftrab p").text($(".portfolionone p").eq(i).text());
-                    $(".portfolio .leftrab .btnsmotr").attr("href",$(".portfolionone .btnsmotr").eq(i).attr("href"));
-                    $(".portfolio .bgrhomb").attr("style", $(".portfolionone .bgrhomb").eq(i).attr("style"));
-                    $(".portfolio .numberrab").text("0"+(i+1));
-                }
-                p++;
-            },1);
-        }
+        });  
         if ($(".greyrec").html()!=undefined){
             zamena(0); 
         /**
-            * Отслеживание скролла
-            *
-            * Изменяет свойства элементов страницы при скролле
-            */            
+          * Отслеживание скролла
+          *
+          * Изменяет свойства элементов страницы при скролле
+          */            
             $(window).scroll(function(){  
                 hNow=Math.ceil($(window).scrollTop());
                 if(f2==1 && hNow<hEnd){
@@ -580,17 +657,49 @@ $( document ).ready(function() {
                 }
             });
         }
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var string lastAnimation
+          */
         var lastAnimation = new Date().getTime();
-        var quietPeriod = 100; 
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var number quietPeriod
+          */
+        var quietPeriod = 100;
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var number animationTime
+          */        
         var animationTime=500;
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object objAnim
+          */
         var objAnim;
         /**
-            * Перехват события колесика
-            *
-            * Перелистывание слайда
-            *
-            * @param event e
-            */
+          * Перехват события колесика
+          *
+          * Перелистывание слайда
+          *
+          * @param event e
+          */
         function onWheel(e) {
             e = e || window.event;
             var timeNow = new Date().getTime();
@@ -632,12 +741,12 @@ $( document ).ready(function() {
         }     
         window.addEventListener("wheel", onWheel);
         /**
-            * Анимация скролла
-            *
-            * Запускает анимацию скролла на заданное кол-во px
-            *
-            * @param number numberScroll
-            */       
+          * Анимация скролла
+          *
+          * Запускает анимацию скролла на заданное кол-во px
+          *
+          * @param number numberScroll
+          */       
         function scroll(numberScroll){
             $(".portfolio").removeClass("prtnext");
             $("html, body").animate({
@@ -651,10 +760,10 @@ $( document ).ready(function() {
         // komanda---------------------------------------------------------------
         if ($(".flexkomanda").html()!=undefined){   
         /**
-            * Эффект прилипания
-            *
-            * Эффект прилипания для сотрудников
-            */        
+          * Эффект прилипания
+          *
+          * Эффект прилипания для сотрудников
+          */        
             $(window).scroll(function(){         
                 if (ff2==1 && hNow<hEnd2){
                     $(".flexbig").css("position", "fixed");
@@ -681,16 +790,47 @@ $( document ).ready(function() {
                 } 
             });
         }
-        
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var string oldHtml
+          */
         var oldHtml;
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object[] arr
+          */
         var arr = [];
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object allUslZagl
+          */
         var allUslZagl=$(".uslugi h3");
+        /**
+          * Конец эффекта прилипания слайда
+          *
+          * Храним  высчитанный конец, при котором  
+          * слайд отлипает от экрана
+          *
+          *@var object allUsl
+          */
         var allUsl=$(".uslugi .ul");
         /**
-            * Расчет отступов и высоты
-            *
-            * Расчет отступов и высоты для серых блоков прайс-листа  
-            */    
+          * Расчет отступов и высоты
+          *
+          * Расчет отступов и высоты для серых блоков прайс-листа  
+          */    
         function allTopGreyUsl(){
             topGrey=0;
             for (i=0; i<allUsl.length; i++){
@@ -710,10 +850,10 @@ $( document ).ready(function() {
             }
         }            
         /**
-            * Изменяет свойства страницы Index
-            *
-            * Изменяет свойства страницы при изминении размера окна
-            */     
+          * Изменяет свойства страницы Index
+          *
+          * Изменяет свойства страницы при изминении размера окна
+          */     
         function resize2(){
             allTopGreyUsl();       
 			menuH=$(".menu").innerHeight();
